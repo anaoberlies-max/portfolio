@@ -25,41 +25,36 @@
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  color: #555; /* cinza por padrão */
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   transition: all 0.3s ease;
-  background: #f2f2f2;
-  border: none;
-}
-
-.btn img.icon {
-  width: 20px;
-  height: 20px;
-}
-
-.btn:hover {
-  color: #000;       /* fica preto */
-  background: #e6e6e6;
 }
 
 .btn.primary {
-  background: #f2f2f2;
+  background: #111;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #333;
 }
 
 .btn.secondary {
-  background: #f2f2f2;
+  background: #444;
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background: #666;
 }
 
 .btn.outline {
-  border: 2px solid #ccc;
+  border: 2px solid #111;
+  color: #111;
   background: transparent;
 }
 
 .btn.outline:hover {
-  background: #f2f2f2;
-  border-color: #000;
+  background: #111;
+  color: #fff;
 }
     header::after {
       content: "";
