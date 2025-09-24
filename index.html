@@ -13,43 +13,11 @@
       line-height: 1.6;
     }
     header {
-  position: relative;
-  background: url("COVER.png") no-repeat center center/cover;
-  min-height: 100vh; 
-}
-
-#intro {
-  /* Mantém o alinhamento e o preenchimento */
-  text-align: center;
-  padding: 4rem 2rem;
-  max-width: 900px;
-  /* Ajusta a margem para um espaçamento mais equilibrado */
-  margin: -5rem auto 5rem auto; 
-  /* Adiciona uma caixa e cantos arredondados */
-  background-color: #f8f9fa; /* Um cinza claro para o fundo */
-  border-radius: 15px; /* Cantos arredondados */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Uma sombra suave para um efeito de "flutuação" */
-}
-
-#intro h1 {
-  font-size: 3.5rem; /* Aumenta um pouco para mais impacto */
-  font-weight: 800; /* Deixa a fonte mais pesada */
-  margin-bottom: 1.5rem; /* Aumenta o espaçamento abaixo do título */
-  color: #212529; /* Uma cor mais escura para melhor legibilidade */
-}
-
-#intro h2 {
-  font-size: 1.75rem; /* Aumenta um pouco */
-  margin-bottom: 1.5rem;
-  color: #495057;
-}
-
-#intro p {
-  font-size: 1.25rem; /* Aumenta o tamanho do texto do parágrafo */
-  line-height: 1.6; /* Aumenta a altura da linha para melhor leitura */
-  margin-bottom: 2.5rem;
-  color: #6c757d;
-}
+      position: relative;
+      background: url("COVER.png") no-repeat center center/cover;
+      min-height: 100vh;
+    }
+    
     header::after {
       content: "";
       position: absolute;
@@ -57,28 +25,33 @@
       background: rgba(0,0,0,0.55);
       z-index: 0;
     }
+    
     header h1, header h2, header p, .btn-group {
       position: relative;
       z-index: 1;
     }
+    
     header h1 {
       font-size: 4rem;
       margin-bottom: 0.5rem;
       font-weight: 700;
       letter-spacing: 2px;
     }
+    
     header h2 {
       font-size: 1.6rem;
       font-weight: 400;
       margin-bottom: 1.5rem;
       color: #e0e0e0;
     }
+    
     header p {
       font-size: 1.2rem;
       max-width: 700px;
       margin: 0 auto 2rem;
       color: #ccc;
     }
+    
     .btn-group a {
       display: inline-block;
       margin: 0.5rem;
@@ -91,15 +64,48 @@
       font-weight: 600;
       transition: all 0.3s ease;
     }
+    
     .btn-group a:hover {
       background: #fff;
       color: #111;
     }
+    
+    #intro {
+      text-align: center;
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: -5rem auto 5rem auto;
+      background-color: #f8f9fa;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    #intro h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: #212529;
+    }
+    
+    #intro h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #495057;
+    }
+    
+    #intro p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      color: #6c757d;
+    }
+    
     section {
       max-width: 1100px;
       margin: 5rem auto;
       padding: 0 2rem;
     }
+    
     section h3 {
       font-size: 2.2rem;
       margin-bottom: 2rem;
@@ -108,6 +114,7 @@
       font-weight: 600;
       letter-spacing: 1px;
     }
+    
     section p {
       font-size: 1.15rem;
       text-align: center;
@@ -115,12 +122,14 @@
       margin: 0 auto;
       color: #444;
     }
+    
     .skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
     }
+    
     .skill-card {
       background: #f2f2f2;
       padding: 2.5rem;
@@ -129,59 +138,112 @@
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    
     .skill-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 10px 22px rgba(0,0,0,0.15);
     }
+    
     .skill-card h4 {
       margin-bottom: 1rem;
       font-size: 1.4rem;
       color: #111;
     }
+    
     .skill-card p {
       color: #555;
     }
+    
     footer {
-      background: #111;
-      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2c2c2c;
+      color: #ffffff;
+      padding: 1.5rem 2rem;
+    }
+
+    footer p:nth-child(2) {
+      margin: auto;
       text-align: center;
-      padding: 3rem 2rem;
-      margin-top: 4rem;
     }
+    
     footer a {
-      color: #fff;
-      font-weight: 500;
+      color: #ffffff;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
+
     footer a:hover {
+      color: #ffffff;
       text-decoration: underline;
+    }
+
+    /* Media Queries para dispositivos móveis */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header h2 {
+        font-size: 1.2rem;
+      }
+      
+      #intro {
+        padding: 2rem 1rem;
+        margin: -3rem auto 3rem auto;
+      }
+      
+      #intro h1 {
+        font-size: 2rem;
+      }
+      
+      #intro h2 {
+        font-size: 1.2rem;
+      }
+      
+      #intro p {
+        font-size: 1rem;
+      }
+      
+      .skills {
+        grid-template-columns: 1fr;
+      }
+      
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+      
+      footer p {
+        margin: 0.5rem 0;
+      }
+      
+      footer p:nth-child(2) {
+        margin: 0.5rem 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header></header> <
+  <header></header>
 
-<section id="intro">
-  <h1>Digital Marketing & Communication</h1>
-  <p>Curious, creative, and passionate about turning ideas into action.</p>
-  <div class="btn-group">
-    <a href="CV.eng.pdf.pdf" target="_blank"> Download CV</a>
-    <a href="Portfolio_c.pdf" target="_blank">See Portfolio</a>
-    <a href="mailto:oberlies.ana@gmail.com"> Contact me</a>
-  </div>
-</section>
-
+  <section id="intro">
+    <h1>Digital Marketing & Communication</h1>
+    <p>Curious, creative, and passionate about turning ideas into action.</p>
+    <div class="btn-group">
+      <a href="CV.eng.pdf.pdf" target="_blank"> Download CV</a>
+      <a href="Portfolio_c.pdf" target="_blank">See Portfolio</a>
+      <a href="mailto:oberlies.ana@gmail.com"> Contact me</a>
+    </div>
+  </section>
 
   <section id="sobre">
     <h3>About Me...</h3>
     <p>
-      Driven by curiosity, resilience, and creativity, I’ve built a dynamic journey across marketing, hospitality, and the textile industry.
-My professional path began early volunteering at Banco Alimentar and Fundação Ronald McDonald taught me the power of teamwork, while working in restaurants and events at 16y instilled adaptability and responsibility. In 2020, I pivoted towards my passion, pursuing a Marketing Management degree at IPAM-Porto and interning at Quinta Nova de Nossa Senhora do Carmo, Lda., where I gained hands-on experience in brand strategy and innovation.
-Later, at Trotinete, I applied my strategic mindset to the textile industry, developing skills in project management and creative execution in a fast-paced environment.
-Now, I’m back in the world of wine at Quinta do Cume reconnecting with an industry that has always inspired me and where I continue to grow professionally.
-Outside of work, I find inspiration in outdoor adventures, live music, and creative pursuits.
-To me, every challenge is an opportunity to grow and I’m just getting started
+      Driven by curiosity, resilience, and creativity, I’ve built a dynamic journey across marketing, hospitality, and the textile industry. My professional path began early volunteering at Banco Alimentar and Fundação Ronald McDonald taught me the power of teamwork, while working in restaurants and events at 16y instilled adaptability and responsibility. In 2020, I pivoted towards my passion, pursuing a Marketing Management degree at IPAM-Porto and interning at Quinta Nova de Nossa Senhora do Carmo, Lda., where I gained hands-on experience in brand strategy and innovation. Later, at Trotinete, I applied my strategic mindset to the textile industry, developing skills in project management and creative execution in a fast-paced environment. Now, I’m back in the world of wine at Quinta do Cume reconnecting with an industry that has always inspired me and where I continue to grow professionally. Outside of work, I find inspiration in outdoor adventures, live music, and creative pursuits. To me, every challenge is an opportunity to grow and I’m just getting started.
     </p>
   </section>
 
@@ -199,11 +261,11 @@ To me, every challenge is an opportunity to grow and I’m just getting started
     </div>
   </section>
 
-<footer>
+  <footer>
     <p>+351 917 525 158</p>
     <p>oberlies.ana@gmail.com</p>
     <p>www.linkedin.com/in/ana-oberlies</p>
-</footer>
+  </footer>
 
 </body>
 </html>
