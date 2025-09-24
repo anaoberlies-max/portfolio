@@ -14,18 +14,33 @@
     }
     header {
   position: relative;
-  background-image: url("COVER.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: #fff;
+  background: url("COVER.png") no-repeat center center/cover;
+  min-height: 100vh; /* imagem ocupa a altura toda */
+}
+
+#intro {
   text-align: center;
-  padding: 7rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: -5rem auto 3rem auto; /* puxa o bloco um pouco para cima */
+}
+
+#intro h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#intro h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+#intro p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #333;
 }
     header::after {
       content: "";
