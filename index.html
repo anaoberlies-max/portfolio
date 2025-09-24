@@ -200,9 +200,37 @@ To me, every challenge is an opportunity to grow and I’m just getting started
   </section>
 
   <footer>
-    <p>📧 <a href="mailto:oberlies.ana@gmail.com">oberlies.ana@gmail.com</a></p>
-    <p>📞 +351 917 525 158</p>
-    <p>🔗 <a href="https://www.linkedin.com/in/ana-oberlies/" target="_blank">LinkedIn</a></p>
+    footer {
+  /* Use Flexbox para alinhar os itens horizontalmente */
+  display: flex;
+  flex-direction: column; /* Alinha os itens em coluna (um debaixo do outro) */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+
+  /* Estilização do footer */
+  background-color: #1a1a1a; /* Uma cor de fundo mais escura para contraste */
+  color: #cccccc; /* Uma cor de texto cinza claro para suavizar */
+  padding: 2.5rem 1rem; /* Espaçamento interno */
+  margin-top: 3rem; /* Espaçamento acima do footer */
+}
+
+footer p {
+  /* Ajustes para cada linha de texto */
+  margin: 0.5rem 0; /* Espaçamento entre os itens */
+  font-size: 1rem;
+}
+
+footer a {
+  /* Estilo dos links */
+  color: #cccccc;
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  transition: color 0.3s ease; /* Efeito de transição suave na cor */
+}
+
+footer a:hover {
+  /* Efeito ao passar o mouse por cima do link */
+  color: #ffffff; /* Fica branco quando o mouse passa por cima */
+}
   </footer>
 
 </body>
