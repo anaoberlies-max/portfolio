@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Oberlies | Digital Marketing</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+    header {
+      position: relative;
+      background: url('PORT.pdf.pdf#page=1') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 7rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+    header h1, header h2, header p, .btn-group {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    header h2 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    .btn-group a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 30px;
+      background: #111;
+      color: #fff;
+      border: 2px solid #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-group a:hover {
+      background: #fff;
+      color: #111;
+    }
+    section {
+      max-width: 1100px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+    }
+    section h3 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: #111;
+      text-align: center;
+      font-weight: 600;
+    }
+    section p {
+      font-size: 1.15rem;
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+      color: #444;
+    }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .skill-card {
+      background: #f9f9f9;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+    }
+    .skill-card h4 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #111;
+    }
+    .skill-card p {
+      color: #555;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+    footer a {
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ana Oberlies</h1>
+    <h2>Digital Marketing & Business Developer</h2>
+    <p>Curiosa, criativa e apaixonada por transformar ideias em ação.</p>
+    <div class="btn-group">
+      <a href="AnaOberliesCV.pt.pdf" target="_blank">📄 Download CV</a>
+      <a href="PORT.pdf.pdf" target="_blank">💼 Ver Portfólio</a>
+      <a href="mailto:oberlies.ana@gmail.com">✉️ Contactar-me</a>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <h3>Sobre Mim</h3>
+    <p>
+      Sou a Ana, Digital Marketing Manager, apaixonada por inovação e colaboração. A minha jornada mistura experiências práticas, voluntariado e marketing, que moldaram uma profissional proativa, criativa e comunicativa. Fora do trabalho, encontro inspiração na natureza, música ao vivo e tudo o que alimenta a minha criatividade.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h3>As Minhas Competências</h3>
+    <div class="skills">
+      <div class="skill-card">
+        <h4>🎯 Hard Skills</h4>
+        <p>Digital Marketing<br>Social Media Management<br>Photography & Content Production<br>Storytelling & Copyright<br>Data Analysis</p>
+      </div>
+      <div class="skill-card">
+        <h4>🤝 Soft Skills</h4>
+        <p>Criatividade<br>Adaptabilidade<br>Comunicação<br>Gestão de Tempo</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>📧 <a href="mailto:oberlies.ana@gmail.com">oberlies.ana@gmail.com</a></p>
+    <p>📞 +351 917 525 158</p>
+    <p>🔗 <a href="https://www.linkedin.com/in/ana-oberlies/" target="_blank">LinkedIn</a></p>
+  </footer>
+
+</body>
+</html>
