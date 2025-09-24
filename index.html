@@ -14,7 +14,7 @@
     }
     header {
       position: relative;
-      background: url('PORT.pdf.pdf#page=1') no-repeat center center/cover;
+      background: url('cover.png') no-repeat center center/cover;
       color: #fff;
       text-align: center;
       padding: 7rem 2rem;
@@ -22,12 +22,13 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
     }
     header::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.55);
       z-index: 0;
     }
     header h1, header h2, header p, .btn-group {
@@ -38,23 +39,26 @@
       font-size: 4rem;
       margin-bottom: 0.5rem;
       font-weight: 700;
+      letter-spacing: 2px;
     }
     header h2 {
       font-size: 1.6rem;
       font-weight: 400;
       margin-bottom: 1.5rem;
+      color: #e0e0e0;
     }
     header p {
       font-size: 1.2rem;
       max-width: 700px;
       margin: 0 auto 2rem;
+      color: #ccc;
     }
     .btn-group a {
       display: inline-block;
       margin: 0.5rem;
       padding: 0.9rem 1.8rem;
       border-radius: 30px;
-      background: #111;
+      background: transparent;
       color: #fff;
       border: 2px solid #fff;
       text-decoration: none;
@@ -76,6 +80,7 @@
       color: #111;
       text-align: center;
       font-weight: 600;
+      letter-spacing: 1px;
     }
     section p {
       font-size: 1.15rem;
@@ -91,7 +96,7 @@
       margin-top: 3rem;
     }
     .skill-card {
-      background: #f9f9f9;
+      background: #f2f2f2;
       padding: 2.5rem;
       border-radius: 20px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.08);
@@ -130,12 +135,12 @@
 <body>
 
   <header>
-    <h1>Ana Oberlies</h1>
+    <h1>OBERLIES</h1>
     <h2>Digital Marketing & Business Developer</h2>
     <p>Curiosa, criativa e apaixonada por transformar ideias em ação.</p>
     <div class="btn-group">
-      <a href="AnaOberliesCV.pt.pdf" target="_blank">📄 Download CV</a>
-      <a href="PORT.pdf.pdf" target="_blank">💼 Ver Portfólio</a>
+      <a href="AnaOberliesENG.pdf" target="_blank">📄 Download CV</a>
+      <a href="Portfolio_c.pdf" target="_blank">💼 Ver Portfólio</a>
       <a href="mailto:oberlies.ana@gmail.com">✉️ Contactar-me</a>
     </div>
   </header>
