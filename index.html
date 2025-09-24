@@ -12,35 +12,49 @@
       color: #111;
       line-height: 1.6;
     }
-    header {
-  position: relative;
-  background: url("COVER.png") no-repeat center center/cover;
-  min-height: 100vh; /* imagem ocupa a altura toda */
+    .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-#intro {
-  text-align: center;
-  padding: 4rem 2rem;
-  max-width: 900px;
-  margin: -5rem auto 3rem auto; /* puxa o bloco um pouco para cima */
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-#intro h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.btn.primary {
+  background: #111;
+  color: #fff;
 }
 
-#intro h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #555;
+.btn.primary:hover {
+  background: #333;
 }
 
-#intro p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #333;
+.btn.secondary {
+  background: #444;
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background: #666;
+}
+
+.btn.outline {
+  border: 2px solid #111;
+  color: #111;
+  background: transparent;
+}
+
+.btn.outline:hover {
+  background: #111;
+  color: #fff;
 }
     header::after {
       content: "";
