@@ -1,245 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ana Oberlies | Digital Marketing</title>
   <style>
-    :root {
-      --terra-dark: #8C5A50;
-      --terra-medium: #B2735C;
-      --terra-light: #C98F74;
-      --terra-soft: #E7B9A9;
-      --text-dark: #111;
-      --text-gray: #555;
+    :root{
+      --terra-dark:#8C5A50;
+      --terra-medium:#B2735C;
+      --terra-light:#C98F74;
+      --terra-soft:#E7B9A9;
+      --text-dark:#111;
+      --text-gray:#555;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'The Seasons', serif;
-      background-color: #fff;
-      color: var(--text-dark);
-      line-height: 1.6;
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'The Seasons', serif;
+      background:#fff;
+      color:var(--text-dark);
+      line-height:1.6;
     }
 
-    /* HEADER */
-    header {
-      position: relative;
-      background: url("COVER.png") no-repeat center center/cover;
-      min-height: 100vh;
+    /* HEADER: capa (imagem) */
+    header{
+      position:relative;
+      background:url("COVER.png") no-repeat center center/cover;
+      /* menos alto que 100vh para permitir que #intro apareça imediatamente abaixo */
+      min-height:75vh;
+      width:100%;
+      display:block;
+    }
+    header::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.55);
+      z-index:0;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 0;
+    /* INTRO - bloco abaixo da capa (afastado ~1cm) */
+    #intro{
+      text-align:center;
+      padding:4rem 2rem;
+      max-width:900px;
+      /* margem superior de cerca de 1cm; !important garante override de estilos anteriores */
+      margin: 1cm auto 5rem auto !important;
+      background-color:var(--terra-soft);
+      border-radius:18px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      position:relative;
+      z-index:5;
     }
 
-    /* INTRO */
-    #intro {
-      margin-top: 2rem; 
-      text-align: center;
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: -5rem auto 5rem auto;
-      background-color: var(--terra-soft);
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    #intro h1{
+      font-size:3rem;
+      font-weight:800;
+      margin-bottom:1.5rem;
+      color:var(--terra-dark);
     }
 
-    #intro h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: var(--terra-dark);
-    }
-
-    #intro p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 2.5rem;
-      color: var(--text-gray);
+    #intro p{
+      font-size:1.2rem;
+      line-height:1.6;
+      margin-bottom:2.5rem;
+      color:var(--text-gray);
     }
 
     /* BOTÕES */
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+    .btn-group{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:1rem;
     }
-
-    .btn {
-      padding: 1rem 2rem;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.3s ease;
-      font-size: 1rem;
+    .btn{
+      padding:1rem 2rem;
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:600;
+      font-family:'Poppins',sans-serif;
+      transition:all .25s ease;
+      font-size:1rem;
+      color:var(--text-gray); /* cinza por padrão */
+      background:transparent;
+      border:2px solid transparent;
     }
-
-    .btn.primary {
-      background: var(--terra-dark);
-      color: #fff;
+    .btn.primary{
+      background:var(--terra-dark);
+      color:#fff;
+      border-color:var(--terra-dark);
     }
-    .btn.primary:hover {
-      background: var(--terra-medium);
-      color: #111;
+    .btn.primary:hover{ background:var(--terra-medium); color:#111; }
+    .btn.secondary{
+      background:var(--terra-light);
+      color:#fff;
+      border-color:var(--terra-light);
     }
-
-    .btn.secondary {
-      background: var(--terra-light);
-      color: #fff;
+    .btn.secondary:hover{ background:var(--terra-medium); color:#111; }
+    .btn.outline{
+      background:transparent;
+      border:2px solid var(--terra-dark);
+      color:var(--terra-dark);
     }
-    .btn.secondary:hover {
-      background: var(--terra-medium);
-      color: #111;
-    }
-
-    .btn.outline {
-      border: 2px solid var(--terra-dark);
-      color: var(--terra-dark);
-      background: transparent;
-    }
-    .btn.outline:hover {
-      background: var(--terra-soft);
-      color: #111;
-    }
+    .btn.outline:hover{ background:var(--terra-soft); color:#111; }
 
     /* SECTIONS */
-    section {
-      max-width: 1100px;
-      margin: 5rem auto;
-      padding: 0 2rem;
+    section{
+      max-width:1100px;
+      margin:5rem auto;
+      padding:0 2rem;
     }
-
-    section h3 {
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-      color: var(--terra-dark);
-      text-align: center;
-      font-weight: 600;
-      letter-spacing: 1px;
+    section h3{
+      font-size:2.2rem;
+      margin-bottom:2rem;
+      color:var(--terra-dark);
+      text-align:center;
+      font-weight:600;
+      letter-spacing:1px;
     }
-
-    section p {
-      font-size: 1.15rem;
-      text-align: center;
-      max-width: 850px;
-      margin: 0 auto;
-      color: var(--text-gray);
+    section p{
+      font-size:1.15rem;
+      text-align:center;
+      max-width:850px;
+      margin:0 auto;
+      color:var(--text-gray);
     }
 
     /* SKILLS */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+      margin-top:3rem;
     }
-
-    .skill-card {
-      background: var(--terra-soft);
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .skill-card{
+      background:var(--terra-soft);
+      padding:2.5rem;
+      border-radius:20px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      text-align:center;
+      transition:transform .3s ease, box-shadow .3s ease;
     }
-
-    .skill-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+    .skill-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 10px 22px rgba(0,0,0,0.15);
     }
-
-    .skill-card h4 {
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-      color: var(--terra-dark);
-    }
-
-    .skill-card p {
-      color: var(--text-gray);
-    }
+    .skill-card h4{ margin-bottom:1rem; font-size:1.4rem; color:var(--terra-dark); }
+    .skill-card p{ color:var(--text-gray); }
 
     /* FOOTER */
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: var(--terra-dark);
-      color: #ffffff;
-      padding: 1.5rem 2rem;
+    footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background-color:var(--terra-dark);
+      color:#fff;
+      padding:1.5rem 2rem;
     }
+    footer p:nth-child(2){ margin:auto; text-align:center; }
+    footer a{ color:#fff; text-decoration:none; transition:color .3s ease;}
+    footer a:hover{ color:var(--terra-soft); text-decoration:underline; }
 
-    footer p:nth-child(2) {
-      margin: auto;
-      text-align: center;
-    }
-
-    footer a {
-      color: #ffffff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover {
-      color: var(--terra-soft);
-      text-decoration: underline;
-    }
-
-    /* ANIMAÇÃO REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* REVEAL ANIMATION */
+    .reveal{ opacity:0; transform:translateY(40px); transition:all 1s ease; }
+    .reveal.active{ opacity:1; transform:translateY(0); }
 
     /* RESPONSIVO */
-    @media (max-width: 768px) {
-      #intro {
-        padding: 2rem 1rem;
-        margin: -3rem auto 3rem auto;
-      }
-
-      #intro h1 {
-        font-size: 2rem;
-      }
-
-      #intro p {
-        font-size: 1rem;
-      }
-
-      .skills {
-        grid-template-columns: 1fr;
-      }
-
-      footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-
-      footer p {
-        margin: 0.5rem 0;
-      }
-
-      footer p:nth-child(2) {
-        margin: 0.5rem 0;
-      }
+    @media (max-width:768px){
+      header{ min-height:60vh; }
+      #intro{ padding:2rem 1rem; margin: .7cm auto 3rem auto !important; }
+      #intro h1{ font-size:2rem; }
+      #intro p{ font-size:1rem; }
+      .skills{ grid-template-columns:1fr; }
+      footer{ flex-direction:column; text-align:center; padding:2rem 1rem; }
+      footer p{ margin:.5rem 0; }
+      footer p:nth-child(2){ margin:.5rem 0; }
     }
   </style>
 </head>
 <body>
 
-  <header></header>
+  <header aria-hidden="true"></header>
 
   <section id="intro">
     <h1 class="reveal">Digital Marketing & Communication</h1>
@@ -275,28 +217,25 @@
   <footer>
     <p>+351 917 525 158</p>
     <p>oberlies.ana@gmail.com</p>
-    <p><a href="https://www.linkedin.com/in/ana-oberlies" target="_blank">LinkedIn</a></p>
+    <p><a href="https://www.linkedin.com/in/ana-oberlies" target="_blank" rel="noopener">LinkedIn</a></p>
   </footer>
 
-  <!-- SCRIPT REVEAL -->
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded",function(){
       const reveals = document.querySelectorAll(".reveal");
-
-      function revealOnScroll() {
+      function revealOnScroll(){
         const windowHeight = window.innerHeight;
-        reveals.forEach(el => {
-          const elementTop = el.getBoundingClientRect().top;
-          if (elementTop < windowHeight - 100) {
-            el.classList.add("active");
+        reveals.forEach((el,i)=>{
+          const top = el.getBoundingClientRect().top;
+          if(top < windowHeight - 100){
+            // adiciona com pequeno delay para fazer stagger suave
+            setTimeout(()=> el.classList.add("active"), i*80);
           }
         });
       }
-
       window.addEventListener("scroll", revealOnScroll);
-      revealOnScroll(); // executa ao carregar
+      revealOnScroll(); // invoca ao carregar
     });
   </script>
-
 </body>
 </html>
