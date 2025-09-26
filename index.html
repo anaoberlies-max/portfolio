@@ -5,19 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ana Oberlies | Digital Marketing</title>
   <style>
+    :root {
+      --terra-dark: #8C5A50;
+      --terra-medium: #B2735C;
+      --terra-light: #C98F74;
+      --terra-soft: #E7B9A9;
+      --text-dark: #111;
+      --text-gray: #555;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'The Seasons', serif;
       background-color: #fff;
-      color: #111;
+      color: var(--text-dark);
       line-height: 1.6;
     }
+
+    /* HEADER */
     header {
       position: relative;
       background: url("COVER.png") no-repeat center center/cover;
       min-height: 100vh;
     }
-    
+
     header::after {
       content: "";
       position: absolute;
@@ -25,140 +36,146 @@
       background: rgba(0,0,0,0.55);
       z-index: 0;
     }
-    
-    header h1, header h2, header p, .btn-group {
-      position: relative;
-      z-index: 1;
-    }
-    
-    header h1 {
-      font-size: 4rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-    
-    header h2 {
-      font-size: 1.6rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-      color: #e0e0e0;
-    }
-    
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      color: #ccc;
-    }
-    
-    .btn-group a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.9rem 1.8rem;
-      border-radius: 30px;
-      background: transparent;
-      color: #fff;
-      border: 2px solid #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-group a:hover {
-      background: #fff;
-      color: #111;
-    }
-    
+
+    /* INTRO */
     #intro {
       text-align: center;
       padding: 4rem 2rem;
       max-width: 900px;
       margin: -5rem auto 5rem auto;
-      background-color: #f8f9fa;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      background-color: var(--terra-soft);
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     }
-    
+
     #intro h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 800;
       margin-bottom: 1.5rem;
-      color: #212529;
+      color: var(--terra-dark);
     }
-    
+
     #intro h2 {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
-      color: #495057;
+      color: var(--terra-medium);
     }
-    
+
     #intro p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 2.5rem;
-      color: #6c757d;
+      color: var(--text-gray);
     }
-    
+
+    /* BOTÕES */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .btn.primary {
+      background: var(--terra-dark);
+      color: #fff;
+    }
+    .btn.primary:hover {
+      background: var(--terra-medium);
+      color: #111;
+    }
+
+    .btn.secondary {
+      background: var(--terra-light);
+      color: #fff;
+    }
+    .btn.secondary:hover {
+      background: var(--terra-medium);
+      color: #111;
+    }
+
+    .btn.outline {
+      border: 2px solid var(--terra-dark);
+      color: var(--terra-dark);
+      background: transparent;
+    }
+    .btn.outline:hover {
+      background: var(--terra-soft);
+      color: #111;
+    }
+
+    /* SECTIONS */
     section {
       max-width: 1100px;
       margin: 5rem auto;
       padding: 0 2rem;
     }
-    
+
     section h3 {
       font-size: 2.2rem;
       margin-bottom: 2rem;
-      color: #111;
+      color: var(--terra-dark);
       text-align: center;
       font-weight: 600;
       letter-spacing: 1px;
     }
-    
+
     section p {
       font-size: 1.15rem;
       text-align: center;
       max-width: 850px;
       margin: 0 auto;
-      color: #444;
+      color: var(--text-gray);
     }
-    
+
+    /* SKILLS */
     .skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
     }
-    
+
     .skill-card {
-      background: #f2f2f2;
+      background: var(--terra-soft);
       padding: 2.5rem;
       border-radius: 20px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.08);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    
+
     .skill-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 10px 22px rgba(0,0,0,0.15);
     }
-    
+
     .skill-card h4 {
       margin-bottom: 1rem;
       font-size: 1.4rem;
-      color: #111;
+      color: var(--terra-dark);
     }
-    
+
     .skill-card p {
-      color: #555;
+      color: var(--text-gray);
     }
-    
+
+    /* FOOTER */
     footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #2c2c2c;
+      background-color: var(--terra-dark);
       color: #ffffff;
       padding: 1.5rem 2rem;
     }
@@ -167,7 +184,7 @@
       margin: auto;
       text-align: center;
     }
-    
+
     footer a {
       color: #ffffff;
       text-decoration: none;
@@ -175,51 +192,43 @@
     }
 
     footer a:hover {
-      color: #ffffff;
+      color: var(--terra-soft);
       text-decoration: underline;
     }
 
-    /* Media Queries para dispositivos móveis */
+    /* RESPONSIVO */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      
-      header h2 {
-        font-size: 1.2rem;
-      }
-      
       #intro {
         padding: 2rem 1rem;
         margin: -3rem auto 3rem auto;
       }
-      
+
       #intro h1 {
         font-size: 2rem;
       }
-      
+
       #intro h2 {
         font-size: 1.2rem;
       }
-      
+
       #intro p {
         font-size: 1rem;
       }
-      
+
       .skills {
         grid-template-columns: 1fr;
       }
-      
+
       footer {
         flex-direction: column;
         text-align: center;
         padding: 2rem 1rem;
       }
-      
+
       footer p {
         margin: 0.5rem 0;
       }
-      
+
       footer p:nth-child(2) {
         margin: 0.5rem 0;
       }
@@ -234,9 +243,9 @@
     <h1>Digital Marketing & Communication</h1>
     <p>Curious, creative, and passionate about turning ideas into action.</p>
     <div class="btn-group">
-      <a href="CV.eng.pdf.pdf" target="_blank"> Download CV</a>
-      <a href="Portfolio_c.pdf" target="_blank">See Portfolio</a>
-      <a href="mailto:oberlies.ana@gmail.com"> Contact me</a>
+      <a href="CV.eng.pdf.pdf" target="_blank" class="btn primary">Download CV</a>
+      <a href="Portfolio_c.pdf" target="_blank" class="btn secondary">See Portfolio</a>
+      <a href="mailto:oberlies.ana@gmail.com" class="btn outline">Contact me</a>
     </div>
   </section>
 
@@ -264,7 +273,7 @@
   <footer>
     <p>+351 917 525 158</p>
     <p>oberlies.ana@gmail.com</p>
-    <p>www.linkedin.com/in/ana-oberlies</p>
+    <p><a href="https://www.linkedin.com/in/ana-oberlies" target="_blank">LinkedIn</a></p>
   </footer>
 
 </body>
