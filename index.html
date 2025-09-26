@@ -26,7 +26,6 @@
     header{
       position:relative;
       background:url("COVER.png") no-repeat center center/cover;
-      /* menos alto que 100vh para permitir que #intro apareça imediatamente abaixo */
       min-height:75vh;
       width:100%;
       display:block;
@@ -39,12 +38,11 @@
       z-index:0;
     }
 
-    /* INTRO - bloco abaixo da capa (afastado ~1cm) */
+    /* INTRO */
     #intro{
       text-align:center;
       padding:4rem 2rem;
       max-width:900px;
-      /* margem superior de cerca de 1cm; !important garante override de estilos anteriores */
       margin: 1cm auto 5rem auto !important;
       background-color:var(--terra-soft);
       border-radius:18px;
@@ -59,7 +57,6 @@
       margin-bottom:1.5rem;
       color:var(--terra-dark);
     }
-
     #intro p{
       font-size:1.2rem;
       line-height:1.6;
@@ -82,35 +79,19 @@
       font-family:'Poppins',sans-serif;
       transition:all .25s ease;
       font-size:1rem;
-      color:var(--text-gray); /* cinza por padrão */
+      color:var(--text-gray);
       background:transparent;
       border:2px solid transparent;
     }
-    .btn.primary{
-      background:var(--terra-dark);
-      color:#fff;
-      border-color:var(--terra-dark);
-    }
-    .btn.primary:hover{ background:var(--terra-medium); color:#111; }
-    .btn.secondary{
-      background:var(--terra-light);
-      color:#fff;
-      border-color:var(--terra-light);
-    }
-    .btn.secondary:hover{ background:var(--terra-medium); color:#111; }
-    .btn.outline{
-      background:transparent;
-      border:2px solid var(--terra-dark);
-      color:var(--terra-dark);
-    }
-    .btn.outline:hover{ background:var(--terra-soft); color:#111; }
+    .btn.primary{ background:var(--terra-dark); color:#fff; border-color:var(--terra-dark);}
+    .btn.primary:hover{ background:var(--terra-medium); color:#111;}
+    .btn.secondary{ background:var(--terra-light); color:#fff; border-color:var(--terra-light);}
+    .btn.secondary:hover{ background:var(--terra-medium); color:#111;}
+    .btn.outline{ background:transparent; border:2px solid var(--terra-dark); color:var(--terra-dark);}
+    .btn.outline:hover{ background:var(--terra-soft); color:#111;}
 
     /* SECTIONS */
-    section{
-      max-width:1100px;
-      margin:5rem auto;
-      padding:0 2rem;
-    }
+    section{ max-width:1100px; margin:5rem auto; padding:0 2rem; }
     section h3{
       font-size:2.2rem;
       margin-bottom:2rem;
@@ -142,12 +123,39 @@
       text-align:center;
       transition:transform .3s ease, box-shadow .3s ease;
     }
-    .skill-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 10px 22px rgba(0,0,0,0.15);
-    }
-    .skill-card h4{ margin-bottom:1rem; font-size:1.4rem; color:var(--terra-dark); }
+    .skill-card:hover{ transform:translateY(-8px); box-shadow:0 10px 22px rgba(0,0,0,0.15);}
+    .skill-card h4{ margin-bottom:1rem; font-size:1.4rem; color:var(--terra-dark);}
     .skill-card p{ color:var(--text-gray); }
+
+    /* EXPERIENCE CAROUSEL */
+    #experience{ text-align:center; padding:4rem 2rem; }
+    .carousel{
+      display:flex;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      gap:2rem;
+      padding:1rem;
+    }
+    .carousel::-webkit-scrollbar{ display:none; }
+    .logo-item{
+      flex:0 0 auto;
+      width:180px;
+      height:120px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      filter:grayscale(100%);
+      transition:filter 0.3s ease, transform 0.3s ease;
+    }
+    .logo-item img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+    }
+    .logo-item:hover{
+      filter:grayscale(0%);
+      transform:scale(1.05);
+    }
 
     /* FOOTER */
     footer{
@@ -169,7 +177,7 @@
     /* RESPONSIVO */
     @media (max-width:768px){
       header{ min-height:60vh; }
-      #intro{ padding:2rem 1rem; margin: .7cm auto 3rem auto !important; }
+      #intro{ padding:2rem 1rem; margin:.7cm auto 3rem auto !important; }
       #intro h1{ font-size:2rem; }
       #intro p{ font-size:1rem; }
       .skills{ grid-template-columns:1fr; }
@@ -214,6 +222,17 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience">
+    <h3 class="reveal">Experience</h3>
+    <div class="carousel">
+      <div class="logo-item"><img src="logos/quintanova.png" alt="Quinta Nova"></div>
+      <div class="logo-item"><img src="logos/trotinete.png" alt="Trotinete"></div>
+      <div class="logo-item"><img src="logos/trot.png" alt="Trot"></div>
+      <div class="logo-item"><img src="logos/quintadocume.png" alt="Quinta do Cume"></div>
+    </div>
+  </section>
+
   <footer>
     <p>+351 917 525 158</p>
     <p>oberlies.ana@gmail.com</p>
@@ -228,13 +247,12 @@
         reveals.forEach((el,i)=>{
           const top = el.getBoundingClientRect().top;
           if(top < windowHeight - 100){
-            // adiciona com pequeno delay para fazer stagger suave
             setTimeout(()=> el.classList.add("active"), i*80);
           }
         });
       }
       window.addEventListener("scroll", revealOnScroll);
-      revealOnScroll(); // invoca ao carregar
+      revealOnScroll();
     });
   </script>
 </body>
