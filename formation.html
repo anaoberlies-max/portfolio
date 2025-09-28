@@ -50,6 +50,7 @@
       text-align:justify;
     }
 
+    /* Botões académicos */
     .btn-group {
       display:flex;
       flex-wrap:wrap;
@@ -76,24 +77,29 @@
       color:var(--text-dark);
     }
 
-    .back {
+    /* Botão Back Home diferenciado */
+    .back-home {
       display:block;
-      margin:3rem auto;
+      margin:4rem auto 0 auto;
       text-align:center;
-    }
-
-    .back a {
-      padding:0.8rem 1.5rem;
-      border-radius:30px;
+      width:max-content;
+      padding:1rem 2.5rem;
+      border-radius:40px;
       background:var(--terra-dark);
       color:#fff;
+      font-weight:700;
+      font-family:'Poppins',sans-serif;
       text-decoration:none;
-      font-weight:600;
-      transition:0.3s;
+      font-size:1.1rem;
+      letter-spacing:0.5px;
+      transition:all 0.3s ease;
+      box-shadow:0 6px 16px rgba(0,0,0,0.15);
     }
 
-    .back a:hover {
+    .back-home:hover {
       background:var(--terra-medium);
+      color:#111;
+      transform:translateY(-3px);
     }
   </style>
 </head>
@@ -112,13 +118,15 @@
       My experience at IPAM was crucial to strengthen my analytical and creative abilities, preparing me for dynamic environments in marketing, business development, and communication.
     </p>
 
-    <!-- BOTÕES: Relatório + Apresentação + Diploma -->
+    <!-- Botões académicos -->
     <div class="btn-group">
       <a href="Relatorio_Estagio.pdf" target="_blank" class="btn">📄 Internship Report</a>
       <a href="Apresentacao_Estagio.pdf" target="_blank" class="btn">📊 Internship Presentation</a>
       <a href="Diploma_IPAM.pdf" target="_blank" class="btn">🎓 Graduation Diploma</a>
-      <a href="index.html" class="btn">⬅ Back to Home</a>
     </div>
+
+    <!-- Botão Back Home destacado -->
+    <a href="index.html" class="back-home">⬅ Back to Home</a>
   </section>
 </body>
 </html>
