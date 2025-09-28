@@ -144,7 +144,7 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      filter:grayscale(100%);   /* preto e branco */
+      filter:grayscale(100%);
       transition:filter 0.3s ease, transform 0.3s ease;
     }
     .logo-item img{
@@ -153,8 +153,39 @@
       object-fit:contain;
     }
     .logo-item:hover{
-      filter:grayscale(0%);     /* aparece a cores */
-      transform:scale(1.05);    /* leve zoom */
+      filter:grayscale(0%);
+      transform:scale(1.05);
+    }
+
+    /* FORMATION */
+    #formation{ text-align:center; padding:4rem 2rem; }
+    .formation-logos{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:2rem;
+      flex-wrap:wrap;
+      margin-top:2rem;
+    }
+    .formation-item{
+      flex:0 0 auto;
+      width:200px;
+      height:140px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      filter:grayscale(100%);
+      transition:filter 0.3s ease, transform 0.3s ease;
+    }
+    .formation-item img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      cursor:pointer;
+    }
+    .formation-item:hover{
+      filter:grayscale(0%);
+      transform:scale(1.05);
     }
 
     /* FOOTER */
@@ -170,7 +201,7 @@
     footer a{ color:#fff; text-decoration:none; transition:color .3s ease;}
     footer a:hover{ color:var(--terra-soft); text-decoration:underline; }
 
-    /* REVEAL ANIMATION */
+    /* REVEAL */
     .reveal{ opacity:0; transform:translateY(40px); transition:all 1s ease; }
     .reveal.active{ opacity:1; transform:translateY(0); }
 
@@ -222,7 +253,7 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE SECTION -->
+  <!-- EXPERIENCE -->
   <section id="experience">
     <h3 class="reveal">Experience</h3>
     <div class="carousel reveal">
@@ -230,6 +261,18 @@
       <div class="logo-item reveal"><img src="trotinete.logo.png" alt="Trotinete"></div>
       <div class="logo-item reveal"><img src="trot.logo.png" alt="Trot"></div>
       <div class="logo-item reveal"><img src="QuintaCume.logo.png" alt="Quinta do Cume"></div>
+    </div>
+  </section>
+
+  <!-- FORMATION -->
+  <section id="formation">
+    <h3 class="reveal">Formation</h3>
+    <div class="formation-logos reveal">
+      <div class="formation-item reveal">
+        <a href="formation.html">
+          <img src="Ipam.logo.png" alt="IPAM - Marketing Management">
+        </a>
+      </div>
     </div>
   </section>
 
