@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ana Oberlies | Digital Marketing</title>
+
+  <!-- Importar fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --terra-dark:#8C5A50;
@@ -15,8 +19,9 @@
     }
 
     *{margin:0;padding:0;box-sizing:border-box;}
+
     body{
-      font-family: 'Playfair Display', serif;
+      font-family:'Poppins', sans-serif; /* Corpo do texto */
       background:#fff;
       color:var(--text-dark);
       line-height:1.6;
@@ -52,8 +57,9 @@
     }
 
     #intro h1{
+      font-family:'Playfair Display', serif; /* Títulos serifados */
       font-size:3rem;
-      font-weight:800;
+      font-weight:700;
       margin-bottom:1.5rem;
       color:var(--terra-dark);
     }
@@ -93,6 +99,7 @@
     /* SECTIONS */
     section{ max-width:1100px; margin:5rem auto; padding:0 2rem; }
     section h3{
+      font-family:'Playfair Display', serif; /* Títulos serifados */
       font-size:2.4rem;
       margin-bottom:2.5rem;
       color:var(--terra-dark);
@@ -124,93 +131,13 @@
       transition:transform .3s ease, box-shadow .3s ease;
     }
     .skill-card:hover{ transform:translateY(-8px); box-shadow:0 10px 22px rgba(0,0,0,0.15);}
-    .skill-card h4{ margin-bottom:1rem; font-size:1.4rem; color:var(--terra-dark);}
-    .skill-card p{ color:var(--text-gray); }
-
-    /* EXPERIENCE */
-    #experience{
-      text-align:center;
-      padding:4rem 2rem;
-      margin-bottom:2rem;
-    }
-    .carousel{
-      display:flex;
-      overflow-x:auto;
-      scroll-behavior:smooth;
-      gap:2rem;
-      padding:1rem;
-    }
-    .carousel::-webkit-scrollbar{ display:none; }
-    .logo-item{
-      flex:0 0 auto;
-      width:180px;
-      height:120px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      filter:grayscale(100%);
-      transition:filter 0.3s ease, transform 0.3s ease;
-    }
-    .logo-item img{
-      max-width:100%;
-      max-height:100%;
-      object-fit:contain;
-    }
-    .logo-item:hover{
-      filter:grayscale(0%);
-      transform:scale(1.05);
-    }
-
-    /* FORMATION */
-    #formation{
-      text-align:center;
-      padding:2rem 2rem;
-      margin-top:2rem;
-    }
-    .formation-logos{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:2rem;
-      flex-wrap:wrap;
-      margin-top:2rem;
-    }
-    .formation-item{ flex:0 0 auto; }
-    .formation-link{ text-decoration:none; }
-    .formation-card{
-      background:#f9f9f9;
-      padding:2rem;
-      border-radius:20px;
-      box-shadow:0 6px 16px rgba(0,0,0,0.1);
-      transition:all 0.3s ease;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-    }
-    .formation-card img{
-      max-width:180px;
-      max-height:120px;
-      object-fit:contain;
-      filter:grayscale(100%);
-      transition:filter 0.3s ease, transform 0.3s ease;
-      margin-bottom:1rem;
-      cursor:pointer;
-    }
-    .formation-card p{
-      font-size:1rem;
-      font-weight:600;
+    .skill-card h4{ 
+      font-family:'Playfair Display', serif; 
+      margin-bottom:1rem; 
+      font-size:1.4rem; 
       color:var(--terra-dark);
-      margin:0;
     }
-    .formation-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 10px 22px rgba(0,0,0,0.15);
-    }
-    .formation-card:hover img{
-      filter:grayscale(0%);
-      transform:scale(1.05);
-    }
+    .skill-card p{ color:var(--text-gray); }
 
     /* FOOTER */
     footer{
@@ -247,7 +174,7 @@
   <header aria-hidden="true"></header>
 
   <section id="intro">
-    <h1 class="reveal">DIGITAL MARKETING & COMUNICATION</h1>
+    <h1 class="reveal">DIGITAL MARKETING & COMMUNICATION</h1>
     <p class="reveal">Curious, creative, and passionate about turning ideas into action.</p>
     <div class="btn-group reveal">
       <a href="Ana.Oberlies.CV.eng.pdf" target="_blank" class="btn primary">Download CV</a>
@@ -259,7 +186,7 @@
   <section id="sobre">
     <h3 class="reveal">ABOUT ME...</h3>
     <p class="reveal">
-      Driven by curiosity, resilience, and creativity, I’ve built a dynamic journey across marketing, hospitality, and the textile industry. My professional path began early volunteering at Banco Alimentar and Fundação Ronald McDonald taught me the power of teamwork, while working in restaurants and events at 16y instilled adaptability and responsibility. In 2020, I pivoted towards my passion, pursuing a Marketing Management degree at IPAM-Porto and interning at Quinta Nova de Nossa Senhora do Carmo, Lda., where I gained hands-on experience in brand strategy and innovation. Later, at Trotinete, I applied my strategic mindset to the textile industry, developing skills in project management and creative execution in a fast-paced environment. Now, I’m back in the world of wine at Quinta do Cume reconnecting with an industry that has always inspired me and where I continue to grow professionally. Outside of work, I find inspiration in outdoor adventures, live music, and creative pursuits. To me, every challenge is an opportunity to grow and I’m just getting started.
+      Driven by curiosity, resilience, and creativity, I’ve built a dynamic journey across marketing, hospitality, and the textile industry...
     </p>
   </section>
 
@@ -277,7 +204,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
     <h3 class="reveal">EXPERIENCE</h3>
     <div class="carousel reveal">
@@ -288,7 +214,6 @@
     </div>
   </section>
 
-  <!-- FORMATION -->
   <section id="formation">
     <h3 class="reveal">EDUCATION</h3>
     <div class="formation-logos reveal">
