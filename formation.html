@@ -108,6 +108,31 @@
       transform: translateY(-2px);
     }
 
+    /* Botão Back Home fixo */
+    .back-home {
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:999;
+      padding:1rem 2.5rem;
+      border-radius:40px;
+      background:var(--terra-dark);
+      color:#fff;
+      font-weight:700;
+      font-family:'Poppins',sans-serif;
+      text-decoration:none;
+      font-size:1.1rem;
+      letter-spacing:0.5px;
+      transition:all 0.3s ease;
+      box-shadow:0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .back-home:hover {
+      background:var(--terra-medium);
+      color:#111;
+      transform:translateY(-3px);
+    }
     /* Projects logos */
     .projects-grid {
       display: grid;
