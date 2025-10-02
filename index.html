@@ -4,10 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ana Oberlies | Digital Marketing</title>
-
-  <!-- Importar fontes -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
   <style>
     :root{
       --terra-dark:#8C5A50;
@@ -19,9 +15,8 @@
     }
 
     *{margin:0;padding:0;box-sizing:border-box;}
-
     body{
-      font-family:'Poppins', sans-serif; /* Corpo do texto */
+      font-family:'Cormorant Garamond', serif;
       background:#fff;
       color:var(--text-dark);
       line-height:1.6;
@@ -57,9 +52,8 @@
     }
 
     #intro h1{
-      font-family:'Playfair Display', serif; /* Títulos serifados */
       font-size:3rem;
-      font-weight:700;
+      font-weight:800;
       margin-bottom:1.5rem;
       color:var(--terra-dark);
     }
@@ -99,7 +93,6 @@
     /* SECTIONS */
     section{ max-width:1100px; margin:5rem auto; padding:0 2rem; }
     section h3{
-      font-family:'Playfair Display', serif; /* Títulos serifados */
       font-size:2.4rem;
       margin-bottom:2.5rem;
       color:var(--terra-dark);
@@ -131,13 +124,93 @@
       transition:transform .3s ease, box-shadow .3s ease;
     }
     .skill-card:hover{ transform:translateY(-8px); box-shadow:0 10px 22px rgba(0,0,0,0.15);}
-    .skill-card h4{ 
-      font-family:'Playfair Display', serif; 
-      margin-bottom:1rem; 
-      font-size:1.4rem; 
-      color:var(--terra-dark);
-    }
+    .skill-card h4{ margin-bottom:1rem; font-size:1.4rem; color:var(--terra-dark);}
     .skill-card p{ color:var(--text-gray); }
+
+    /* EXPERIENCE */
+    #experience{
+      text-align:center;
+      padding:4rem 2rem;
+      margin-bottom:2rem;
+    }
+    .carousel{
+      display:flex;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      gap:2rem;
+      padding:1rem;
+    }
+    .carousel::-webkit-scrollbar{ display:none; }
+    .logo-item{
+      flex:0 0 auto;
+      width:180px;
+      height:120px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      filter:grayscale(100%);
+      transition:filter 0.3s ease, transform 0.3s ease;
+    }
+    .logo-item img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+    }
+    .logo-item:hover{
+      filter:grayscale(0%);
+      transform:scale(1.05);
+    }
+
+    /* FORMATION */
+    #formation{
+      text-align:center;
+      padding:2rem 2rem;
+      margin-top:2rem;
+    }
+    .formation-logos{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:2rem;
+      flex-wrap:wrap;
+      margin-top:2rem;
+    }
+    .formation-item{ flex:0 0 auto; }
+    .formation-link{ text-decoration:none; }
+    .formation-card{
+      background:#f9f9f9;
+      padding:2rem;
+      border-radius:20px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.1);
+      transition:all 0.3s ease;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+    .formation-card img{
+      max-width:180px;
+      max-height:120px;
+      object-fit:contain;
+      filter:grayscale(100%);
+      transition:filter 0.3s ease, transform 0.3s ease;
+      margin-bottom:1rem;
+      cursor:pointer;
+    }
+    .formation-card p{
+      font-size:1rem;
+      font-weight:600;
+      color:var(--terra-dark);
+      margin:0;
+    }
+    .formation-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 10px 22px rgba(0,0,0,0.15);
+    }
+    .formation-card:hover img{
+      filter:grayscale(0%);
+      transform:scale(1.05);
+    }
 
     /* FOOTER */
     footer{
@@ -174,7 +247,7 @@
   <header aria-hidden="true"></header>
 
   <section id="intro">
-    <h1 class="reveal">DIGITAL MARKETING & COMMUNICATION</h1>
+    <h1 class="reveal">Digital Marketing & Communication</h1>
     <p class="reveal">Curious, creative, and passionate about turning ideas into action.</p>
     <div class="btn-group reveal">
       <a href="Ana.Oberlies.CV.eng.pdf" target="_blank" class="btn primary">Download CV</a>
@@ -184,28 +257,29 @@
   </section>
 
   <section id="sobre">
-    <h3 class="reveal">ABOUT ME...</h3>
+    <h3 class="reveal">About Me...</h3>
     <p class="reveal">
-      Driven by curiosity, resilience, and creativity, I’ve built a dynamic journey across marketing, hospitality, and the textile industry...
+      Driven by curiosity, resilience, and creativity, I’ve built a dynamic journey across marketing, hospitality, and the textile industry. [...]
     </p>
   </section>
 
   <section id="skills">
-    <h3 class="reveal">MY SKILLS</h3>
+    <h3 class="reveal">My Skills</h3>
     <div class="skills">
       <div class="skill-card reveal">
-        <h4>HARD SKILLS</h4>
+        <h4>Hard Skills</h4>
         <p>Digital Marketing<br>Social Media Management<br>Photography & Content Production<br>Storytelling & Copyright<br>Data Analysis<br>CRM</p>
       </div>
       <div class="skill-card reveal">
-        <h4>SOFT SKILLS</h4>
+        <h4>Soft Skills</h4>
         <p>Creativity<br>Adaptability<br>Communication<br>Time Management<br>Problem Solving<br>Results-oriented</p>
       </div>
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
   <section id="experience">
-    <h3 class="reveal">EXPERIENCE</h3>
+    <h3 class="reveal">Experience</h3>
     <div class="carousel reveal">
       <div class="logo-item reveal"><img src="QuintaNova.logo.png" alt="Quinta Nova"></div>
       <div class="logo-item reveal"><img src="trotinete.logo.png" alt="Trotinete"></div>
@@ -214,8 +288,9 @@
     </div>
   </section>
 
+  <!-- FORMATION -->
   <section id="formation">
-    <h3 class="reveal">EDUCATION</h3>
+    <h3 class="reveal">Formation</h3>
     <div class="formation-logos reveal">
       <div class="formation-item reveal">
         <a href="formation.html" class="formation-link">
