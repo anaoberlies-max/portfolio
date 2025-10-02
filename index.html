@@ -131,7 +131,7 @@
     #experience{
       text-align:center;
       padding:4rem 2rem;
-      margin-bottom:2rem; /* espaço reduzido antes da formação */
+      margin-bottom:2rem;
     }
     .carousel{
       display:flex;
@@ -164,8 +164,8 @@
     /* FORMATION */
     #formation{
       text-align:center;
-      padding:2rem 2rem; /* menos padding */
-      margin-top:2rem;   /* menos espaço depois da experiência */
+      padding:2rem 2rem;
+      margin-top:2rem;
     }
     .formation-logos{
       display:flex;
@@ -175,23 +175,39 @@
       flex-wrap:wrap;
       margin-top:2rem;
     }
-    .formation-item{
-      flex:0 0 auto;
-      width:200px;
-      height:140px;
+    .formation-item{ flex:0 0 auto; }
+    .formation-link{ text-decoration:none; }
+    .formation-card{
+      background:#f9f9f9;
+      padding:2rem;
+      border-radius:20px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.1);
+      transition:all 0.3s ease;
       display:flex;
-      justify-content:center;
+      flex-direction:column;
       align-items:center;
+      justify-content:center;
+    }
+    .formation-card img{
+      max-width:180px;
+      max-height:120px;
+      object-fit:contain;
       filter:grayscale(100%);
       transition:filter 0.3s ease, transform 0.3s ease;
-    }
-    .formation-item img{
-      max-width:100%;
-      max-height:100%;
-      object-fit:contain;
+      margin-bottom:1rem;
       cursor:pointer;
     }
-    .formation-item:hover{
+    .formation-card p{
+      font-size:1rem;
+      font-weight:600;
+      color:var(--terra-dark);
+      margin:0;
+    }
+    .formation-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 10px 22px rgba(0,0,0,0.15);
+    }
+    .formation-card:hover img{
       filter:grayscale(0%);
       transform:scale(1.05);
     }
@@ -277,8 +293,11 @@
     <h3 class="reveal">Formation</h3>
     <div class="formation-logos reveal">
       <div class="formation-item reveal">
-        <a href="formation.html">
-          <img src="ipam.logo.png" alt="IPAM - Marketing Management">
+        <a href="formation.html" class="formation-link">
+          <div class="formation-card">
+            <img src="ipam.logo.png" alt="IPAM - Marketing Management">
+            <p>See my Academic Journey</p>
+          </div>
         </a>
       </div>
     </div>
