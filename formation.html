@@ -31,7 +31,7 @@
     }
 
     section {
-      max-width:900px;
+      max-width:1000px;
       margin:4rem auto;
       padding:0 2rem;
       text-align:center;
@@ -78,6 +78,39 @@
       transform:translateY(-2px);
     }
 
+    /* Logos Projects */
+    .projects-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+      gap:2rem;
+      margin-top:2.5rem;
+    }
+
+    .project-logo {
+      background:#f9f9f9;
+      border-radius:15px;
+      padding:1.5rem;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-logo img {
+      max-width:100%;
+      max-height:100px;
+      object-fit:contain;
+      filter:grayscale(100%);
+      transition:filter 0.3s ease;
+    }
+
+    .project-logo:hover {
+      transform:translateY(-6px);
+      box-shadow:0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .project-logo:hover img {
+      filter:grayscale(0%);
+    }
+
     /* Botão Back Home fixo */
     .back-home {
       position:fixed;
@@ -120,15 +153,34 @@
       My experience at IPAM was crucial to strengthen my analytical and creative abilities, preparing me for dynamic environments in marketing, business development, and communication.
     </p>
 
-    <!-- Botões académicos -->
     <div class="btn-group">
       <a href="RelatorioEstagio.pdf" target="_blank" class="btn">Internship Report</a>
-      <a href="RelatorioFinalPPT.pdf" target="_blank" class="btn">Internship Presentation</a>
+      <a href="ApresentacaoEstagio.pdf" target="_blank" class="btn">Internship Presentation</a>
       <a href="DiplomaIPAM.pdf" target="_blank" class="btn">Graduation Diploma</a>
     </div>
   </section>
 
-  <!-- Botão Back Home fixo -->
+  <!-- NOVA SECÇÃO PROJECTOS -->
+  <section id="projects">
+    <h2>Projects @ IPAM</h2>
+    <p>Some of the brands I worked with during my studies. Click on each logo to see the project.</p>
+
+    <div class="projects-grid">
+      <a href="Projeto_Nike.pdf" target="_blank" class="project-logo">
+        <img src="nike.logo.png" alt="Nike Project"/>
+      </a>
+      <a href="Projeto_CocaCola.pdf" target="_blank" class="project-logo">
+        <img src="cocacola.logo.png" alt="Coca-Cola Project"/>
+      </a>
+      <a href="Projeto_Sagres.pdf" target="_blank" class="project-logo">
+        <img src="sagres.logo.png" alt="Sagres Project"/>
+      </a>
+      <a href="Projeto_Sonae.pdf" target="_blank" class="project-logo">
+        <img src="sonae.logo.png" alt="Sonae Project"/>
+      </a>
+    </div>
+  </section>
+
   <a href="index.html" class="back-home">Back to Home</a>
 </body>
 </html>
