@@ -23,118 +23,148 @@
       padding:0;
     }
 
+    /* HEADER COM COVER */
     header {
-      background-color:var(--terra-dark);
-      color:#fff;
-      padding:3rem 2rem;
-      text-align:center;
+      position: relative;
+      background: url("COVER.png") no-repeat center center/cover;
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55); /* overlay escuro */
+      z-index: 0;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: #ddd;
     }
 
     section {
-      max-width:1000px;
-      margin:4rem auto;
-      padding:0 2rem;
-      text-align:center;
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      text-align: center;
     }
 
     section h2 {
-      font-size:2rem;
-      margin-bottom:1.5rem;
-      color:var(--terra-dark);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--terra-dark);
     }
 
     section p {
-      font-size:1.15rem;
-      color:var(--text-gray);
-      margin-bottom:1.5rem;
-      text-align:justify;
+      font-size: 1.15rem;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+      text-align: justify;
     }
 
     /* Botões académicos */
     .btn-group {
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:1rem;
-      margin-top:2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
     }
 
     .btn {
-      padding:0.9rem 1.8rem;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-      font-family:'Poppins',sans-serif;
-      transition:all .25s ease;
-      font-size:1rem;
-      border:2px solid var(--terra-dark);
-      background:transparent;
-      color:var(--terra-dark);
+      padding: 0.9rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      transition: all .25s ease;
+      font-size: 1rem;
+      border: 2px solid var(--terra-dark);
+      background: transparent;
+      color: var(--terra-dark);
     }
 
     .btn:hover {
-      background:var(--terra-soft);
-      color:var(--text-dark);
-      transform:translateY(-2px);
+      background: var(--terra-soft);
+      color: var(--text-dark);
+      transform: translateY(-2px);
     }
 
-    /* Logos Projects */
+    /* Projects logos */
     .projects-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
-      gap:2rem;
-      margin-top:2.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
     }
 
     .project-logo {
-      background:#f9f9f9;
-      border-radius:15px;
-      padding:1.5rem;
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
-      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      background: #f9f9f9;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-logo img {
-      max-width:100%;
-      max-height:100px;
-      object-fit:contain;
-      filter:grayscale(100%);
-      transition:filter 0.3s ease;
+      max-width: 100%;
+      max-height: 100px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
     }
 
     .project-logo:hover {
-      transform:translateY(-6px);
-      box-shadow:0 8px 18px rgba(0,0,0,0.15);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
     }
 
     .project-logo:hover img {
-      filter:grayscale(0%);
+      filter: grayscale(0%);
     }
 
     /* Botão Back Home fixo */
     .back-home {
-      position:fixed;
-      bottom:20px;
-      left:50%;
-      transform:translateX(-50%);
-      z-index:999;
-      padding:1rem 2.5rem;
-      border-radius:40px;
-      background:var(--terra-dark);
-      color:#fff;
-      font-weight:700;
-      font-family:'Poppins',sans-serif;
-      text-decoration:none;
-      font-size:1.1rem;
-      letter-spacing:0.5px;
-      transition:all 0.3s ease;
-      box-shadow:0 6px 16px rgba(0,0,0,0.15);
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      padding: 1rem 2.5rem;
+      border-radius: 40px;
+      background: var(--terra-dark);
+      color: #fff;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
     .back-home:hover {
-      background:var(--terra-medium);
-      color:#111;
-      transform:translateY(-3px);
+      background: var(--terra-medium);
+      color: #111;
+      transform: translateY(-3px);
     }
   </style>
 </head>
@@ -160,7 +190,6 @@
     </div>
   </section>
 
-  <!-- NOVA SECÇÃO PROJECTOS -->
   <section id="projects">
     <h2>Projects @ IPAM</h2>
     <p>Some of the brands I worked with during my studies. Click on each logo to see the project.</p>
