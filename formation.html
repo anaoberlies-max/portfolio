@@ -26,7 +26,7 @@
     /* HEADER COM COVER */
     header {
       position: relative;
-      background: url("COVER1.JPG") no-repeat center center/cover;
+      background: url("COVER.png") no-repeat center center/cover;
       min-height: 40vh;
       display: flex;
       flex-direction: column;
@@ -40,7 +40,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.55); /* overlay escuro */
+      background: rgba(0,0,0,0.55);
       z-index: 0;
     }
 
@@ -141,31 +141,20 @@
       filter: grayscale(0%);
     }
 
-    /* Botão Back Home fixo */
-    .back-home {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999;
-      padding: 1rem 2.5rem;
-      border-radius: 40px;
-      background: var(--terra-dark);
+    /* FOOTER */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--terra-dark);
       color: #fff;
-      font-weight: 700;
-      font-family: 'Poppins', sans-serif;
-      text-decoration: none;
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      padding: 1.5rem 2rem;
+      margin-top: 4rem;
     }
+    footer p:nth-child(2){ margin:auto; text-align:center; }
+    footer a{ color:#fff; text-decoration:none; transition:color .3s ease;}
+    footer a:hover{ color:var(--terra-soft); text-decoration:underline; }
 
-    .back-home:hover {
-      background: var(--terra-medium);
-      color: #111;
-      transform: translateY(-3px);
-    }
   </style>
 </head>
 <body>
@@ -192,21 +181,28 @@
 
   <section id="projects">
     <h2>Projects @ IPAM</h2>
-    <p>Some of the best Brand I worked with during my studies.</p>
+    <p>Some of the brands I worked with during my studies. Click on each logo to visit their website.</p>
 
     <div class="projects-grid">
-      <a href="Projeto_Nike.pdf" target="_blank" class="project-logo">
-        <img src="Phunk.logo.jpeg" alt="Nike Project"/>
+      <a href="https://www.nike.com" target="_blank" class="project-logo">
+        <img src="nike.logo.png" alt="Nike"/>
       </a>
-      <a href="Projeto_CocaCola.pdf" target="_blank" class="project-logo">
-        <img src="Moyo.logo.webp" alt="Coca-Cola Project"/>
+      <a href="https://www.coca-cola.pt" target="_blank" class="project-logo">
+        <img src="cocacola.logo.png" alt="Coca-Cola"/>
       </a>
-      <a href="Projeto_Sagres.pdf" target="_blank" class="project-logo">
-        <img src="Barkin.logo.png" alt="Sagres Project"/>
+      <a href="https://www.sagres.pt" target="_blank" class="project-logo">
+        <img src="sagres.logo.png" alt="Sagres"/>
+      </a>
+      <a href="https://www.sonae.pt" target="_blank" class="project-logo">
+        <img src="sonae.logo.png" alt="Sonae"/>
       </a>
     </div>
   </section>
 
-  <a href="index.html" class="back-home">Back to Home</a>
+  <footer>
+    <p>+351 917 525 158</p>
+    <p>oberlies.ana@gmail.com</p>
+    <p><a href="https://www.linkedin.com/in/ana-oberlies" target="_blank" rel="noopener">LinkedIn</a></p>
+  </footer>
 </body>
 </html>
