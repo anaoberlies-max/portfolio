@@ -50,7 +50,6 @@
       position:relative;
       z-index:5;
     }
-
     #intro h1{
       font-size:3rem;
       font-weight:800;
@@ -170,22 +169,40 @@
       left:0; top:0;
       width:100%; height:100%;
       background:rgba(0,0,0,0.6);
-      display:flex;
       align-items:center;
       justify-content:center;
     }
     .modal-content{
       background:#fff;
-      padding:2rem;
-      border-radius:15px;
-      max-width:600px;
+      padding:2.5rem 2rem;
+      border-radius:20px;
+      max-width:500px;
       width:90%;
       position:relative;
-      box-shadow:0 8px 30px rgba(0,0,0,0.2);
+      box-shadow:0 10px 35px rgba(0,0,0,0.25);
       animation:fadeIn .4s ease;
+      text-align:center;
     }
-    .modal-content h4{ margin-bottom:1rem; color:var(--terra-dark);}
-    .modal-content p{ color:var(--text-gray);}
+    .modal-content img{
+      max-width:120px;
+      margin-bottom:1rem;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:transform .3s ease;
+    }
+    .modal-content img:hover{
+      transform:scale(1.05);
+    }
+    .modal-content h4{ 
+      margin:1rem 0 .5rem; 
+      color:var(--terra-dark); 
+      font-size:1.5rem;
+    }
+    .modal-content p{ 
+      color:var(--text-gray); 
+      font-size:1.1rem;
+      line-height:1.5;
+    }
     .close{
       position:absolute;
       top:15px; right:15px;
@@ -193,10 +210,63 @@
       cursor:pointer;
       color:var(--terra-dark);
       font-weight:bold;
+      transition:color .3s ease;
     }
+    .close:hover{ color:var(--terra-medium); }
     @keyframes fadeIn{
       from{opacity:0; transform:translateY(-20px);}
       to{opacity:1; transform:translateY(0);}
+    }
+
+    /* FORMATION */
+    #formation{
+      text-align:center;
+      padding:2rem 2rem;
+      margin-top:2rem;
+    }
+    .formation-logos{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:2rem;
+      flex-wrap:wrap;
+      margin-top:2rem;
+    }
+    .formation-item{ flex:0 0 auto; }
+    .formation-link{ text-decoration:none; }
+    .formation-card{
+      background:#f9f9f9;
+      padding:2rem;
+      border-radius:20px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.1);
+      transition:all 0.3s ease;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+    .formation-card img{
+      max-width:180px;
+      max-height:120px;
+      object-fit:contain;
+      filter:grayscale(100%);
+      transition:filter 0.3s ease, transform 0.3s ease;
+      margin-bottom:1rem;
+      cursor:pointer;
+    }
+    .formation-card p{
+      font-size:1rem;
+      font-weight:600;
+      color:var(--terra-dark);
+      margin:0;
+    }
+    .formation-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 10px 22px rgba(0,0,0,0.15);
+    }
+    .formation-card:hover img{
+      filter:grayscale(0%);
+      transform:scale(1.05);
     }
 
     /* FOOTER */
@@ -278,6 +348,7 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
+      <img src="QuintaNova.logo.png" alt="Quinta Nova">
       <h4>Quinta Nova de Nossa Senhora do Carmo</h4>
       <p>Estágio curricular em marketing estratégico e inovação no setor dos vinhos.</p>
     </div>
@@ -285,6 +356,7 @@
   <div id="modal2" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
+      <img src="trotinete.logo.png" alt="Trotinete">
       <h4>Trotinete</h4>
       <p>Gestão de projetos e desenvolvimento criativo na indústria têxtil.</p>
     </div>
@@ -292,6 +364,7 @@
   <div id="modal3" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
+      <img src="trot.logo.png" alt="Trot">
       <h4>Trot</h4>
       <p>Experiência em estratégias de branding e comunicação.</p>
     </div>
@@ -299,6 +372,7 @@
   <div id="modal4" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
+      <img src="QuintaCume.logo.png" alt="Quinta do Cume">
       <h4>Quinta do Cume</h4>
       <p>Atualmente a trabalhar na área de marketing e comunicação no setor vitivinícola.</p>
     </div>
