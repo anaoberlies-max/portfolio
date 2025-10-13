@@ -1,188 +1,205 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Formation | Ana Oberlies</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@300;400;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-  --accent: #6B705C;        /* verde oliva suave */
-  --accent-2: #A5A58D;      /* verde seco */
-  --bg: #F6F4EE;            /* bege claro */
-  --panel: #EDEAE2;         /* areia quente / tom natural */
-  --muted: #7C7C6D;         /* cinza esverdeado */
-  --text: #2E2C2A;          /* castanho escuro para contraste */
-  --shadow: rgba(80,70,60,0.08);
-  --emboss-shadow: rgba(255,255,255,0.6);
-  --max-width: 1100px;
+      --accent: #6B705C;        /* olive green */
+      --accent-2: #A5A58D;      /* sage */
+      --bg: #F6F4EE;            /* light beige */
+      --panel: #EDEAE2;         /* soft sand */
+      --muted: #7C7C6D;         /* grey-green */
+      --text: #2E2C2A;          /* dark earthy */
+      --shadow: rgba(80,70,60,0.08);
+      --emboss-shadow: rgba(255,255,255,0.6);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
 
     body {
-      font-family:'Horizon', non-serif;
-      background:#fff;
-      color:var(--text-dark);
+      font-family:'Cormorant Garamond', serif;
+      background:var(--bg);
+      color:var(--text);
       line-height:1.6;
-      margin:0;
-      padding:0;
     }
 
-    /* HEADER COM COVER */
+    /* HEADER */
     header {
-      position: relative;
-      background: url("COVER1.JPG") no-repeat center center/cover;
-      min-height: 40vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
+      position:relative;
+      background:url("COVER1.JPG") no-repeat center center/cover;
+      min-height:45vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+      overflow:hidden;
     }
-
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 0;
+    header::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.55);
+      z-index:0;
     }
-
     header h1, header p {
-      position: relative;
-      z-index: 1;
+      position:relative;
+      z-index:2;
     }
-
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
+      font-family:"Cinzel Decorative", serif;
+      font-size:3rem;
+      letter-spacing:0.05em;
+      margin-bottom:0.5rem;
+      color:#fff;
     }
-
     header p {
-      font-size: 1.3rem;
-      color: #ddd;
+      font-family:"Cormorant Garamond", serif;
+      font-size:1.3rem;
+      color:#f0f0f0;
     }
 
+    /* MAIN SECTIONS */
     section {
-      max-width: 1000px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-      text-align: center;
+      max-width:1000px;
+      margin:4rem auto;
+      padding:0 2rem;
+      text-align:center;
     }
 
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: var(--terra-dark);
+      font-family:"Cinzel Decorative", serif;
+      font-size:2rem;
+      color:var(--accent);
+      margin-bottom:1.5rem;
+      letter-spacing:0.05em;
     }
 
     section p {
-      font-size: 1.15rem;
-      color: var(--text-gray);
-      margin-bottom: 1.5rem;
-      text-align: justify;
+      font-size:1.1rem;
+      color:var(--muted);
+      margin-bottom:1.5rem;
+      text-align:justify;
     }
 
-    /* Botões académicos */
+    /* BUTTONS */
     .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:1rem;
+      margin-top:2rem;
     }
 
     .btn {
-      padding: 0.9rem 1.8rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-family: 'Horizon', non-serif;
-      transition: all .25s ease;
-      font-size: 1rem;
-      border: 2px solid var(--terra-dark);
-      background: transparent;
-      color: var(--terra-dark);
+      padding:0.9rem 1.8rem;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      font-family:'Poppins', sans-serif;
+      transition:all .25s ease;
+      font-size:1rem;
+      border:2px solid var(--accent);
+      background:transparent;
+      color:var(--accent);
     }
 
     .btn:hover {
-      background: var(--terra-soft);
-      color: var(--text-dark);
-      transform: translateY(-2px);
+      background:var(--accent);
+      color:#fff;
+      transform:translateY(-3px);
+      box-shadow:0 6px 16px rgba(0,0,0,0.15);
     }
 
-    /* Botão Back Home fixo */
+    /* BACK HOME BUTTON */
     .back-home {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999;
-      padding: 1rem 2.5rem;
-      border-radius: 40px;
-      background: var(--terra-dark);
-      color: #fff;
-      font-weight: 700;
-      font-family: 'Horizon', non-serif;
-      text-decoration: none;
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      position:fixed;
+      bottom:25px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:999;
+      padding:1rem 2.5rem;
+      border-radius:40px;
+      background:var(--accent);
+      color:#fff;
+      font-weight:700;
+      font-family:'Cinzel Decorative', serif;
+      text-decoration:none;
+      font-size:1.1rem;
+      letter-spacing:0.5px;
+      transition:all 0.3s ease;
+      box-shadow:0 6px 16px rgba(0,0,0,0.15);
     }
 
     .back-home:hover {
-      background: var(--terra-medium);
-      color: #111;
-      transform: translateY(-3px);
+      background:var(--accent-2);
+      color:var(--text);
+      transform:translateY(-3px);
     }
 
-    /* Projects logos */
+    /* PROJECTS GRID */
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:2rem;
+      margin-top:2.5rem;
     }
 
     .project-logo {
-      background: #f9f9f9;
-      border-radius: 15px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background:var(--panel);
+      border-radius:15px;
+      padding:1.5rem;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-logo img {
-      max-width: 100%;
-      max-height: 100px;
-      object-fit: contain;
-      filter: grayscale(100%);
-      transition: filter 0.3s ease;
+      max-width:100%;
+      max-height:100px;
+      object-fit:contain;
+      filter:grayscale(100%);
+      transition:filter 0.3s ease;
     }
 
     .project-logo:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      transform:translateY(-6px);
+      box-shadow:0 8px 18px rgba(0,0,0,0.15);
     }
 
     .project-logo:hover img {
-      filter: grayscale(0%);
+      filter:grayscale(0%);
     }
 
     /* FOOTER */
     footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: var(--terra-dark);
-      color: #fff;
-      padding: 1.5rem 2rem;
-      margin-top: 4rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background-color:var(--accent);
+      color:#fff;
+      padding:1.5rem 2rem;
+      margin-top:4rem;
+      flex-wrap:wrap;
     }
+
     footer p:nth-child(2){ margin:auto; text-align:center; }
     footer a{ color:#fff; text-decoration:none; transition:color .3s ease;}
-    footer a:hover{ color:var(--terra-soft); text-decoration:underline; }
+    footer a:hover{ color:var(--accent-2); text-decoration:underline; }
 
+    /* RESPONSIVE */
+    @media (max-width:768px){
+      header h1{ font-size:2.2rem; }
+      section p{ font-size:1rem; }
+      .btn{ font-size:0.95rem; padding:0.8rem 1.4rem; }
+      footer{ flex-direction:column; text-align:center; gap:0.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -224,8 +241,7 @@
     </div>
   </section>
 
-  <!-- Botão Back to Home fixo -->
-  <a href="index.html" class="back-home">BACK</a>
+  <a href="index.html" class="back-home">BACK HOME</a>
 
   <footer>
     <p>+351 917 525 158</p>
