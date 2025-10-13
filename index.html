@@ -320,8 +320,7 @@
     .mini-grid{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem }
 
     /* Footer */
-    footer{
-      footer {
+    footer {
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -331,7 +330,10 @@
       margin-top:4rem;
       flex-wrap:wrap;
     }
-    footer a{ color:#fff; text-decoration:none; font-weight:600 }
+
+    footer p:nth-child(2){ margin:auto; text-align:center; }
+    footer a{ color:#fff; text-decoration:none; transition:color .3s ease;}
+    footer a:hover{ color:var(--accent-2); text-decoration:underline; }
 
     /* Reveal on scroll */
     .reveal{ opacity:0; transform:translateY(22px); transition:all .9s cubic-bezier(.2,.9,.2,1) }
