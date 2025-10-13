@@ -1,509 +1,554 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ana Oberlies | Digital Marketing</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@300;400;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --terra-dark:#8C5A50;
-      --terra-medium:#B2735C;
-      --terra-light:#C98F74;
-      --terra-soft:#E7B9A9;
-      --text-dark:#111;
-      --text-gray:#555;
+      --accent:#8C3A3A;           /* vermelho queimado */
+      --accent-2:#B2735C;
+      --bg:#EDE6EE;              /* lilás suave */
+      --panel:#FBF8FA;           /* cards */
+      --muted:#777;
+      --text:#111;
+      --shadow: rgba(14,10,10,0.06);
+      --emboss-shadow: rgba(255,255,255,0.7);
+      --max-width:1100px;
     }
 
-    *{margin:0;padding:0;box-sizing:border-box;}
+    /* Reset minimal */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
     body{
-      font-family:'Cormorant Garamond', serif;
-      background:#fff;
-      color:var(--text-dark);
+      font-family:"Cormorant Garamond", serif;
+      background: var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
       line-height:1.6;
+      padding-bottom:4rem;
     }
 
-    /* HEADER */
+    /* Subtle paper texture + emboss effect using pseudo elements */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.03) 0, transparent 15%),
+        radial-gradient(circle at 90% 80%, rgba(0,0,0,0.02) 0, transparent 12%),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      pointer-events:none;
+      z-index:0;
+    }
+
+    /* container utilities */
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:0 1.5rem;
+      position:relative;
+      z-index:2;
+    }
+
+    /* Header / cover */
     header{
       position:relative;
-      background:url("COVER.PNG") no-repeat center center/cover;
-      min-height:75vh;
-      width:100%;
-      display:block;
+      min-height:68vh;
+      background: center/cover no-repeat url("COVER.PNG");
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
     }
     header::after{
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.55);
-      z-index:0;
+      background: linear-gradient(0deg, rgba(8,7,7,0.50), rgba(8,7,7,0.25));
+      z-index:1;
     }
 
-    /* INTRO */
+    /* big decorative letter A behind header */
+    header .big-A{
+      position:absolute;
+      z-index:1;
+      font-family:"Cinzel Decorative", serif;
+      font-size:30vw;
+      left:50%;
+      top:10%;
+      transform:translateX(-50%);
+      color:var(--accent);
+      opacity:0.08;
+      pointer-events:none;
+      mix-blend-mode:multiply;
+      letter-spacing:-0.04em;
+    }
+
+    /* intro card overlapping the cover */
     #intro{
-      text-align:center;
-      padding:4rem 2rem;
-      max-width:900px;
-      margin: 1cm auto 5rem auto !important;
-      background-color:var(--terra-soft);
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.80));
       border-radius:18px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 30px var(--shadow), inset 0 2px 8px rgba(255,255,255,0.7);
+      padding:3rem 2rem;
+      margin-top: -6rem;
+      width:100%;
+      max-width:900px;
+      text-align:center;
       position:relative;
-      z-index:5;
+      z-index:3;
     }
     #intro h1{
-      font-size:3rem;
-      font-weight:800;
-      margin-bottom:1.5rem;
-      color:var(--terra-dark);
+      font-family:"Cinzel Decorative", serif;
+      color:var(--accent);
+      font-size:2.6rem;
+      letter-spacing:0.08em;
+      margin-bottom:0.6rem;
     }
     #intro p{
-      font-size:1.2rem;
-      line-height:1.6;
-      margin-bottom:2.5rem;
-      color:var(--text-gray);
+      font-family:"Cormorant Garamond", serif;
+      color:var(--muted);
+      margin-bottom:1.2rem;
+      font-size:1.06rem;
     }
 
-    /* BOTÕES */
+    /* Buttons group (CTA) */
     .btn-group{
       display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
       gap:1rem;
+      justify-content:center;
+      flex-wrap:wrap;
     }
     .btn{
-      padding:1rem 2rem;
-      border-radius:40px;
-      text-decoration:none;
+      font-family:"Poppins",sans-serif;
+      border-radius:32px;
+      padding:0.9rem 1.6rem;
       font-weight:600;
-      font-family:'Poppins',sans-serif;
-      transition:all .25s ease;
-      font-size:1rem;
-      color:var(--text-gray);
+      text-decoration:none;
+      border:1.5px solid rgba(0,0,0,0.06);
       background:transparent;
-      border:2px solid transparent;
+      color:var(--text);
+      transition:all .28s ease;
+      box-shadow: 0 6px 18px rgba(14,10,10,0.04);
     }
-    .btn.primary{ background:var(--terra-dark); color:#fff; border-color:var(--terra-dark);}
-    .btn.primary:hover{ background:var(--terra-medium); color:#111;}
-    .btn.secondary{ background:var(--terra-light); color:#fff; border-color:var(--terra-light);}
-    .btn.secondary:hover{ background:var(--terra-medium); color:#111;}
-    .btn.outline{ background:transparent; border:2px solid var(--terra-dark); color:var(--terra-dark);}
-    .btn.outline:hover{ background:var(--terra-soft); color:#111;}
+    .btn.primary{
+      background:linear-gradient(180deg,var(--accent), var(--accent-2));
+      color:#fff;
+      border-color:transparent;
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--accent);
+      border:1.5px solid rgba(140,58,58,0.12);
+    }
+    .btn.outline{
+      background:transparent;
+      color:var(--text);
+      border:1.2px dashed rgba(0,0,0,0.06);
+    }
+    .btn:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(14,10,10,0.06) }
 
-    /* SECTIONS */
-    section{ max-width:1100px; margin:5rem auto; padding:0 2rem; }
+    /* Sections */
+    section{
+      margin:4.5rem auto;
+      max-width:var(--max-width);
+      padding:0 1.5rem;
+    }
     section h3{
-      font-size:2.4rem;
-      margin-bottom:2.5rem;
-      color:var(--terra-dark);
-      text-align:center;
+      font-family:"Cinzel Decorative", serif;
+      color:var(--accent);
       font-weight:700;
-      letter-spacing:1px;
-    }
-    section p{
-      font-size:1.15rem;
+      font-size:2rem;
       text-align:center;
-      max-width:850px;
-      margin:0 auto;
-      color:var(--text-gray);
+      margin-bottom:1.2rem;
+      letter-spacing:0.06em;
+    }
+    section p.lead{
+      font-family:"Cormorant Garamond", serif;
+      color:var(--muted);
+      text-align:center;
+      max-width:900px;
+      margin:0 auto 1.4rem;
+      font-size:1.02rem;
     }
 
-    /* SKILLS */
+    /* Skills grid */
     .skills{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:2rem;
-      margin-top:3rem;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1.25rem;
+      margin-top:1.5rem;
     }
     .skill-card{
-      background:var(--terra-soft);
-      padding:2.5rem;
-      border-radius:20px;
-      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      background:var(--panel);
+      border-radius:14px;
+      padding:1.6rem;
+      box-shadow: 0 8px 22px rgba(14,10,10,0.04), inset 0 2px 6px rgba(255,255,255,0.6);
       text-align:center;
-      transition:transform .3s ease, box-shadow .3s ease;
+      transition:transform .25s ease;
     }
-    .skill-card:hover{ transform:translateY(-8px); box-shadow:0 10px 22px rgba(0,0,0,0.15);}
-    .skill-card h4{ margin-bottom:1rem; font-size:1.4rem; color:var(--terra-dark);}
-    .skill-card p{ color:var(--text-gray); }
+    .skill-card h4{ font-family:"Cinzel Decorative",serif; color:var(--accent); margin-bottom:0.6rem;}
+    .skill-card p{ color:var(--muted); font-size:0.98rem; }
 
-    /* EXPERIENCE */
-    #experience{
-      text-align:center;
-      padding:4rem 2rem;
-      margin-bottom:2rem;
-    }
-    .carousel{
+    /* Experience carousel */
+    #experience .carousel{
       display:flex;
-      overflow-x:auto;
-      scroll-behavior:smooth;
-      gap:2rem;
+      gap:1rem;
       padding:1rem;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
     }
-    .carousel::-webkit-scrollbar{ display:none; }
+    .carousel::-webkit-scrollbar{height:8px}
+    .carousel::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.08); border-radius:10px}
     .logo-item{
-      flex:0 0 auto;
-      width:180px;
+      flex:0 0 220px;
       height:120px;
       display:flex;
-      justify-content:center;
       align-items:center;
+      justify-content:center;
+      background:var(--panel);
+      border-radius:12px;
+      padding:14px;
       filter:grayscale(100%);
-      transition:filter 0.3s ease, transform 0.3s ease;
+      transition:all .28s ease;
+      box-shadow: 0 8px 20px rgba(14,10,10,0.04);
       cursor:pointer;
+      scroll-snap-align:center;
     }
-    .logo-item img{
-      max-width:100%;
-      max-height:100%;
-      object-fit:contain;
-    }
-    .logo-item:hover{
-      filter:grayscale(0%);
-      transform:scale(1.05);
-    }
+    .logo-item img{ max-width:95%; max-height:100%; object-fit:contain; }
+    .logo-item:hover{ filter:grayscale(0%); transform:translateY(-6px) scale(1.03); box-shadow:0 18px 40px rgba(14,10,10,0.08) }
 
-    /* MODAL */
+    /* Modal (company details) */
     .modal{
       display:none;
       position:fixed;
-      z-index:1000;
-      left:0; top:0;
-      width:100%; height:100%;
-      background:rgba(0,0,0,0.6);
+      inset:0;
+      background:rgba(6,5,6,0.6);
       align-items:center;
       justify-content:center;
+      z-index:999;
+      padding:2rem;
     }
     .modal-content{
-      background:#fff;
-      padding:2.5rem 2rem;
-      border-radius:20px;
-      max-width:500px;
-      width:90%;
-      position:relative;
-      box-shadow:0 10px 35px rgba(0,0,0,0.25);
-      animation:fadeIn .4s ease;
+      width:100%;
+      max-width:640px;
+      background:linear-gradient(180deg,var(--panel), #ffffff);
+      border-radius:16px;
+      padding:2rem;
+      box-shadow: 0 22px 60px rgba(14,10,10,0.28);
       text-align:center;
+      position:relative;
+      font-family:"Cormorant Garamond", serif;
     }
-    .modal-content img{
-      max-width:120px;
-      margin-bottom:1rem;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      transition:transform .3s ease;
-    }
-    .modal-content img:hover{
-      transform:scale(1.05);
-    }
-    .modal-content h4{ 
-      margin:1rem 0 .5rem; 
-      color:var(--terra-dark); 
-      font-size:1.5rem;
-    }
-    .modal-content p{ 
-      color:var(--text-gray); 
-      font-size:1.1rem;
-      line-height:1.5;
-    }
+    .modal-content img{ max-width:110px; margin-bottom:0.8rem; filter:none; }
+    .modal-content h4{ font-family:"Cinzel Decorative", serif; color:var(--accent); margin-bottom:0.25rem; }
+    .modal-content p{ color:var(--muted); font-size:1rem; }
+
     .close{
       position:absolute;
-      top:15px; right:15px;
-      font-size:1.5rem;
+      right:18px;
+      top:12px;
+      background:transparent;
+      border:none;
+      font-size:1.4rem;
+      color:var(--accent);
       cursor:pointer;
-      color:var(--terra-dark);
-      font-weight:bold;
-      transition:color .3s ease;
-    }
-    .close:hover{ color:var(--terra-medium); }
-    @keyframes fadeIn{
-      from{opacity:0; transform:translateY(-20px);}
-      to{opacity:1; transform:translateY(0);}
+      font-weight:700;
     }
 
-    /* FORMATION */
-    #formation{
-      text-align:center;
-      padding:2rem 2rem;
-      margin-top:2rem;
-    }
-    .formation-logos{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:2rem;
-      flex-wrap:wrap;
-      margin-top:2rem;
-    }
-    .formation-item{ flex:0 0 auto; }
-    .formation-link{ text-decoration:none; }
+    /* Formation card (IPAM) */
+    .formation-logos{ display:flex; gap:1rem; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:1rem; }
     .formation-card{
-      background:#f9f9f9;
-      padding:2rem;
-      border-radius:20px;
-      box-shadow:0 6px 16px rgba(0,0,0,0.1);
-      transition:all 0.3s ease;
       display:flex;
       flex-direction:column;
       align-items:center;
-      justify-content:center;
+      gap:0.6rem;
+      padding:1.2rem;
+      border-radius:12px;
+      background:linear-gradient(180deg,#ffffff, #fbf9fb);
+      box-shadow:0 8px 20px rgba(14,10,10,0.04);
+      width:220px;
+      text-decoration:none;
     }
-    .formation-card img{
-      max-width:180px;
-      max-height:120px;
-      object-fit:contain;
-      filter:grayscale(100%);
-      transition:filter 0.3s ease, transform 0.3s ease;
-      margin-bottom:1rem;
-      cursor:pointer;
-    }
-    .formation-card p{
-      font-size:1rem;
-      font-weight:600;
-      color:var(--terra-dark);
-      margin:0;
-    }
-    .formation-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 10px 22px rgba(0,0,0,0.15);
-    }
-    .formation-card:hover img{
-      filter:grayscale(0%);
-      transform:scale(1.05);
-    }
+    .formation-card img{ max-width:160px; filter:grayscale(100%); transition:all .22s ease; cursor:pointer }
+    .formation-card:hover img{ filter:grayscale(0%); transform:scale(1.03) }
+    .formation-card p{ font-family:"Cormorant Garamond", serif; color:var(--accent); font-weight:600; }
 
-    /* FOOTER */
+    /* Certificates & Volunteering smaller emphasis */
+    #certificates h3, #volunteering h3 { font-size:1.7rem; color:var(--accent-2) }
+    .mini-card{
+      background:#FCFBFC;
+      border-radius:10px;
+      padding:1rem;
+      width:180px;
+      text-align:center;
+      box-shadow:0 6px 18px rgba(14,10,10,0.03);
+    }
+    .mini-card img{ max-width:120px; margin-bottom:0.5rem; }
+    .mini-grid{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem }
+
+    /* Footer */
     footer{
+      margin-top:3.5rem;
+      background:linear-gradient(180deg,var(--accent), #6f2c2c);
+      color:#fff;
+      padding:1.6rem;
       display:flex;
       justify-content:space-between;
+      gap:1rem;
       align-items:center;
-      background-color:var(--terra-dark);
-      color:#fff;
-      padding:1.5rem 2rem;
+      flex-wrap:wrap;
     }
-    footer p:nth-child(2){ margin:auto; text-align:center; }
-    footer a{ color:#fff; text-decoration:none; transition:color .3s ease;}
-    footer a:hover{ color:var(--terra-soft); text-decoration:underline; }
+    footer a{ color:#fff; text-decoration:none; font-weight:600 }
 
-    /* REVEAL */
-    .reveal{ opacity:0; transform:translateY(40px); transition:all 1s ease; }
-    .reveal.active{ opacity:1; transform:translateY(0); }
+    /* Reveal on scroll */
+    .reveal{ opacity:0; transform:translateY(22px); transition:all .9s cubic-bezier(.2,.9,.2,1) }
+    .reveal.active{ opacity:1; transform:none }
 
-    /* RESPONSIVO */
-    @media (max-width:768px){
-      header{ min-height:60vh; }
-      #intro{ padding:2rem 1rem; margin:.7cm auto 3rem auto !important; }
-      #intro h1{ font-size:2rem; }
-      #intro p{ font-size:1rem; }
-      .skills{ grid-template-columns:1fr; }
-      footer{ flex-direction:column; text-align:center; padding:2rem 1rem; }
-      footer p{ margin:.5rem 0; }
-      footer p:nth-child(2){ margin:.5rem 0; }
+    /* Responsive */
+    @media (max-width:900px){
+      header .big-A{ font-size:52vw; top:6% }
+      #intro{ margin-top:-4.5rem; padding:2rem }
+      .logo-item{ flex:0 0 180px }
+      .formation-card{ width:180px }
+    }
+
+    @media (max-width:520px){
+      #intro h1{ font-size:1.6rem }
+      .btn{ padding:0.7rem 1rem; font-size:.95rem }
+      .skill-card{ padding:1rem }
     }
   </style>
 </head>
+
 <body>
+  <!-- COVER / HEADER -->
+  <header aria-hidden="false">
+    <div class="big-A" aria-hidden="true">A</div>
+  </header>
 
-  <header aria-hidden="true"></header>
-
-  <section id="intro">
-    <h1 class="reveal">DIGITAL MARKETING & COMMUNICATIONS</h1>
-    <p class="reveal">Curious, creative, and passionate about turning ideas into action.</p>
-    <div class="btn-group reveal">
-      <a href="Ana.Oberlies.CV.eng.pdf" target="_blank" class="btn primary">Download CV</a>
-      <a href="Portfolio_c.pdf" target="_blank" class="btn secondary">See Portfolio</a>
-      <a href="mailto:oberlies.ana@gmail.com" class="btn outline">Contact me</a>
+  <!-- INTRO (overlapping card) -->
+  <section id="intro" class="container reveal">
+    <h1>Digital Marketing & Communication</h1>
+    <p>Curiosa, criativa e apaixonada por transformar ideias em ação.</p>
+    <div class="btn-group">
+      <a class="btn primary" href="Ana.Oberlies.CV.eng.pdf" target="_blank" rel="noopener">Download CV</a>
+      <a class="btn secondary" href="Portfolio_c.pdf" target="_blank" rel="noopener">Ver Portfólio</a>
+      <a class="btn outline" href="mailto:oberlies.ana@gmail.com">Contactar-me</a>
     </div>
   </section>
 
-  <section id="sobre">
-    <h3 class="reveal">ABOUT ME...</h3>
-    <p class="reveal">
-      Driven by curiosity, resilience, and creativity, I’ve built a dynamic journey across marketing, hospitality, and the textile industry. My professional path began early volunteering at Banco Alimentar and Fundação Ronald McDonald taught me the power of teamwork, while working in restaurants and events at 16y instilled adaptability and responsibility. In 2020, I pivoted towards my passion, pursuing a Marketing Management degree at IPAM-Porto and interning at Quinta Nova de Nossa Senhora do Carmo, Lda., where I gained hands-on experience in brand strategy and innovation. Later, at Trotinete, I applied my strategic mindset to the textile industry, developing skills in project management and creative execution in a fast-paced environment. Now, I’m back in the world of wine at Quinta do Cume reconnecting with an industry that has always inspired me and where I continue to grow professionally. Outside of work, I find inspiration in outdoor adventures, live music, and creative pursuits. To me, every challenge is an opportunity to grow and I’m just getting started.</p>
+  <!-- ABOUT -->
+  <section id="sobre" class="reveal">
+    <div class="container">
+      <h3>Sobre Mim</h3>
+      <p class="lead">Sou a Ana, Digital Marketing Manager. A minha jornada mistura experiências práticas, voluntariado e marketing, que moldaram uma profissional proativa, criativa e comunicativa. Fora do trabalho, encontro inspiração na natureza, música ao vivo e tudo o que alimenta a minha criatividade.</p>
+    </div>
   </section>
 
-  <section id="skills">
-    <h3 class="reveal">MY SKILLS</h3>
-    <div class="skills">
-      <div class="skill-card reveal">
-        <h4>HARD SKILLS</h4>
-        <p>Digital Marketing<br>Social Media Management<br>Photography & Content Production<br>Storytelling & Copyright<br>Data Analysis<br>CRM</p>
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <div class="container">
+      <h3>As Minhas Competências</h3>
+      <div class="skills">
+        <div class="skill-card">
+          <h4>Hard Skills</h4>
+          <p>Digital Marketing<br>Social Media Management<br>Photography & Content Production<br>Storytelling & Copyright<br>Data Analysis<br>CRM</p>
+        </div>
+        <div class="skill-card">
+          <h4>Soft Skills</h4>
+          <p>Criatividade<br>Adaptabilidade<br>Comunicação<br>Gestão de Tempo</p>
+        </div>
       </div>
-      <div class="skill-card reveal">
-        <h4>SOFT SKILLS</h4>
-        <p>Creativity<br>Adaptability<br>Communication<br>Time Management<br>Problem Solving<br>Results-oriented</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE (carousel with clickable logos -> modals) -->
+  <section id="experience" class="reveal">
+    <div class="container">
+      <h3>Experience</h3>
+      <p class="lead">Empresas para as quais trabalhei. Clique no logotipo para saber mais sobre o trabalho.</p>
+
+      <div class="carousel" role="list">
+        <div class="logo-item" data-modal="modal1" role="button" tabindex="0" aria-label="Quinta Nova — saber mais">
+          <img src="QuintaNova.logo.png" alt="Quinta Nova">
+        </div>
+        <div class="logo-item" data-modal="modal2" role="button" tabindex="0" aria-label="Trotinete — saber mais">
+          <img src="trotinete.logo.png" alt="Trotinete">
+        </div>
+        <div class="logo-item" data-modal="modal3" role="button" tabindex="0" aria-label="Trot — saber mais">
+          <img src="trot.logo.png" alt="Trot">
+        </div>
+        <div class="logo-item" data-modal="modal4" role="button" tabindex="0" aria-label="Quinta do Cume — saber mais">
+          <img src="QuintaCume.logo.png" alt="Quinta do Cume">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <h3 class="reveal">EXPERIENCE</h3>
-    <div class="carousel reveal">
-      <div class="logo-item" data-modal="modal1"><img src="QuintaNova.logo.png" alt="Quinta Nova"></div>
-      <div class="logo-item" data-modal="modal2"><img src="trotinete.logo.png" alt="Trotinete"></div>
-      <div class="logo-item" data-modal="modal3"><img src="trot.logo.png" alt="Trot"></div>
-      <div class="logo-item" data-modal="modal4"><img src="QuintaCume.logo.png" alt="Quinta do Cume"></div>
+  <!-- Modals for Experience (only open on click) -->
+  <div id="modal1" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="m1title">
+      <button class="close" aria-label="fechar">&times;</button>
+      <img src="QuintaNova.logo.png" alt="" aria-hidden="true">
+      <h4 id="m1title">Quinta Nova de Nossa Senhora do Carmo</h4>
+      <p>Estágio curricular em marketing estratégico e inovação no setor dos vinhos.<br>
+      Principais tarefas: brand activations, planeamento de lançamentos, comunicação interna e externa e gestão de parcerias.</p>
     </div>
-  </section>
+  </div>
 
-  <!-- MODALS -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <img src="QuintaNova.logo.png" alt="Quinta Nova">
-      <h4>Quinta Nova de Nossa Senhora do Carmo</h4>
-      <p>Internship Marketing and Comunication</p> 
-    </p>-Brand activation actions
-        -Product launch planning and development
-        -Internal and external communicatio
-        -Partnership management</p>
+  <div id="modal2" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="m2title">
+      <button class="close" aria-label="fechar">&times;</button>
+      <img src="trotinete.logo.png" alt="" aria-hidden="true">
+      <h4 id="m2title">Trotinete</h4>
+      <p>Função de Marketing Manager: gestão de projetos criativos, comunicação, implementação de CRM, apoio a e-commerce, criação de conteúdos e gestão de parcerias.</p>
     </div>
   </div>
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <img src="trotinete.logo.png" alt="Trotinete">
-      <h4>Trotinete</h4>
-      <p>Marketing Manager</p>
-      </p>-Brand activation actions
-        -Internal and external communication
-        -Partnership and supplier management
-        -CRM implementation and development
-        -Social media management, content creation
-        -E-commerce and sales team suppor
-        -Catalogue development
-        -Lead generation and management
-        -Newsletters</p>
+
+  <div id="modal3" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="m3title">
+      <button class="close" aria-label="fechar">&times;</button>
+      <img src="trot.logo.png" alt="" aria-hidden="true">
+      <h4 id="m3title">Trot</h4>
+      <p>Estratégias de branding, comunicação externa e apoio na criação de materiais comerciais e editoriais.</p>
     </div>
   </div>
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <img src="trot.logo.png" alt="Trot">
-      <h4>Trot</h4>
-      <p>Marketing Manager</p>
-      </p>-Brand activation actions
-        -Internal and external communication
-        -Partnership and supplier management
-        -CRM implementation and development
-        -Social media management, content creation
-        -E-commerce and sales team suppor
-        -Catalogue development
-        -Lead generation and management
-        -Newsletters</p>
-    </div>
-  </div>
-  <div id="modal4" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <img src="QuintaCume.logo.png" alt="Quinta do Cume">
-      <h4>Quinta do Cume</h4>
-      <p>Marketing and Business Developer Manager</p>
-      </p>-Internal and external communication
-        -Partnership and supplier management
-        -Social media management, content creation
-        -Customer management
-        -Maling</p>
+
+  <div id="modal4" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="m4title">
+      <button class="close" aria-label="fechar">&times;</button>
+      <img src="QuintaCume.logo.png" alt="" aria-hidden="true">
+      <h4 id="m4title">Quinta do Cume</h4>
+      <p>Atualmente: Marketing & Business Development — comunicação, gestão de clientes, parcerias e conteúdos digitais.</p>
     </div>
   </div>
 
   <!-- FORMATION -->
-  <section id="formation">
-    <h3 class="reveal">EDUCATION</h3>
-    <div class="formation-logos reveal">
-      <div class="formation-item reveal">
-        <a href="formation.html" class="formation-link">
-          <div class="formation-card">
-            <img src="ipam.logo.png" alt="IPAM - Marketing Management">
-            <p>See my Academic Journey</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- CERTIFICATES -->
-  <section id="certificates">
-    <h3 class="reveal" style="font-size:1.8rem; color:var(--terra-medium);">CERTIFICATES</h3>
-    <div class="formation-logos reveal">
-      <div class="formation-item reveal">
-        <a href="GoogleAnalyticsCertificate.pdf" target="_blank" class="formation-link">
-          <div class="formation-card" style="background:#fafafa; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
-            <img src="Google_Ads.logo.png" alt="Google Analytics Certificate" style="max-width:140px;">
-            <p style="font-size:0.95rem;">Google Analytics</p>
-          </div>
-        </a>
-      </div>
-      <div class="formation-item reveal">
-        <a href="MetaAdsCertificate.pdf" target="_blank" class="formation-link">
-          <div class="formation-card" style="background:#fafafa; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
-            <img src="Google_Ads.logo.png" alt="Meta Ads Certificate" style="max-width:140px;">
-            <p style="font-size:0.95rem;">Meta Ads Manager</p>
-          </div>
+  <section id="formation" class="reveal">
+    <div class="container">
+      <h3>Formation</h3>
+      <p class="lead">IPAM – Marketing Management. Clique no logotipo para ver o meu percurso académico e documentos.</p>
+
+      <div class="formation-logos">
+        <a class="formation-card" href="formation.html" title="Ver formação">
+          <img src="ipam.logo.png" alt="IPAM — Marketing Management">
+          <p>IPAM — Marketing Management</p>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- VOLUNTEERING -->
-  <section id="volunteering">
-    <h3 class="reveal" style="font-size:1.8rem; color:var(--terra-medium);">VOLUNTEERING</h3>
-    <div class="formation-logos reveal">
-      <div class="formation-item reveal">
-        <div class="formation-card" style="background:#fafafa; box-shadow:0 4px 10px rgba(0,0,0,0.05); cursor:default;">
-          <img src="BancoAlimentar.logo.png" alt="Banco Alimentar" style="max-width:140px; filter:grayscale(0%);">
-          <p style="font-size:0.95rem;">Banco Alimentar</p>
-        </div>
+  <!-- CERTIFICATES (less emphasis) -->
+  <section id="certificates" class="reveal">
+    <div class="container">
+      <h3>Certificates</h3>
+      <p class="lead">Algumas formações complementares (clicar para abrir os certificados).</p>
+
+      <div class="mini-grid">
+        <a class="mini-card" href="GoogleAnalyticsCertificate.pdf" target="_blank" rel="noopener">
+          <img src="Google_Ads.logo.png" alt="Google Analytics">
+          <div>Google Analytics</div>
+        </a>
+
+        <a class="mini-card" href="MetaAdsCertificate.pdf" target="_blank" rel="noopener">
+          <img src="Google_Ads.logo.png" alt="Meta Ads">
+          <div>Meta Ads Manager</div>
+        </a>
       </div>
-      <div class="formation-item reveal">
-        <div class="formation-card" style="background:#fafafa; box-shadow:0 4px 10px rgba(0,0,0,0.05); cursor:default;">
-          <img src="Fundacao.logo.png" alt="Fundação Ronald McDonald" style="max-width:140px; filter:grayscale(0%);">
-          <p style="font-size:0.95rem;">Fundação Ronald McDonald</p>
+    </div>
+  </section>
+
+  <!-- VOLUNTEERING (less emphasis) -->
+  <section id="volunteering" class="reveal">
+    <div class="container">
+      <h3>Volunteering</h3>
+      <p class="lead">Experiências voluntárias que ajudaram a moldar a minha visão humana e colaborativa.</p>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <img src="BancoAlimentar.logo.png" alt="Banco Alimentar">
+          <div>Banco Alimentar</div>
+        </div>
+
+        <div class="mini-card">
+          <img src="Fundacao.logo.png" alt="Fundação Ronald McDonald">
+          <div>Fundação Ronald McDonald</div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>+351 917 525 158</p>
-    <p>oberlies.ana@gmail.com</p>
-    <p><a href="https://www.linkedin.com/in/ana-oberlies" target="_blank" rel="noopener">LinkedIn</a></p>
+  <!-- FOOTER -->
+  <footer class="container">
+    <div>📞 +351 917 525 158</div>
+    <div>✉️ <a href="mailto:oberlies.ana@gmail.com">oberlies.ana@gmail.com</a></div>
+    <div><a href="https://www.linkedin.com/in/ana-oberlies" target="_blank" rel="noopener">LinkedIn</a></div>
   </footer>
 
+  <!-- JS: reveal on scroll + modals -->
   <script>
-    // Scroll animation
-    document.addEventListener("DOMContentLoaded",function(){
-      const reveals = document.querySelectorAll(".reveal");
-      function revealOnScroll(){
-        const windowHeight = window.innerHeight;
+    // reveal on scroll
+    document.addEventListener('DOMContentLoaded', function(){
+      const reveals = document.querySelectorAll('.reveal');
+      function reveal(){
+        const h = window.innerHeight;
         reveals.forEach((el,i)=>{
           const top = el.getBoundingClientRect().top;
-          if(top < windowHeight - 100){
-            setTimeout(()=> el.classList.add("active"), i*80);
-          }
+          if(top < h - 90) setTimeout(()=> el.classList.add('active'), i*70);
         });
       }
-      window.addEventListener("scroll", revealOnScroll);
-      revealOnScroll();
+      window.addEventListener('scroll', reveal);
+      reveal();
 
-      // Modals
-      const logoItems = document.querySelectorAll(".logo-item");
-      const modals = document.querySelectorAll(".modal");
-      const closes = document.querySelectorAll(".close");
+      // Modals behavior
+      const logoItems = document.querySelectorAll('.logo-item');
+      const modals = document.querySelectorAll('.modal');
+      const closeBtns = document.querySelectorAll('.close');
 
-      logoItems.forEach(item=>{
-        item.addEventListener("click", ()=>{
-          const modalId = item.getAttribute("data-modal");
-          document.getElementById(modalId).style.display = "flex";
+      logoItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const id = item.getAttribute('data-modal');
+          const modal = document.getElementById(id);
+          if(modal){
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden','false');
+            // trap focus simple: focus close button
+            const btn = modal.querySelector('.close');
+            if(btn) btn.focus();
+          }
+        });
+
+        // allow enter/space keyboard opening
+        item.addEventListener('keydown', (e)=>{
+          if(e.key==='Enter' || e.key===' '){ e.preventDefault(); item.click(); }
         });
       });
 
-      closes.forEach(btn=>{
-        btn.addEventListener("click", ()=>{
-          modals.forEach(m=> m.style.display="none");
+      closeBtns.forEach(btn=>{
+        btn.addEventListener('click', (e)=>{
+          const modal = e.target.closest('.modal');
+          if(modal){ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); }
         });
       });
 
-      window.addEventListener("click", (e)=>{
-        if(e.target.classList.contains("modal")){
-          e.target.style.display="none";
+      // click outside to close
+      window.addEventListener('click', (e)=>{
+        if(e.target.classList && e.target.classList.contains('modal')){
+          e.target.style.display='none';
+          e.target.setAttribute('aria-hidden','true');
+        }
+      });
+
+      // ESC to close any modal
+      window.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape'){
+          modals.forEach(m => { m.style.display='none'; m.setAttribute('aria-hidden','true'); });
         }
       });
     });
